@@ -127,6 +127,7 @@ function bindShot(rerender){
 /* ---------- 排名 ---------- */
 async function openStandings(){view={type:'standings'};history.replaceState(null,'','#standings');renderStandings(true)}
 async function renderStandings(first){
+  document.body.dataset.view='standings';
   try{
     const d=await get('https://site.api.espn.com/apis/v2/sports/basketball/nba/standings');
     if(view.type!=='standings')return;
