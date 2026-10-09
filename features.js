@@ -115,7 +115,7 @@ function shotHTML(d,cs){
   const mine=shots.filter(p=>p.team?.id===shotTeam);
   const made=mine.filter(p=>p.scoringPlay),threes=mine.filter(p=>/three point/i.test(p.text)),threeMade=threes.filter(p=>p.scoringPlay);
   const pct=(a,b)=>b?` (${(a/b*100).toFixed(0)}%)`:'';
-  return `<div class="bar" style="margin-bottom:10px">${cs.map(x=>`<button data-shot="${x.id}" class="${x.id===shotTeam?'on':''}" style="${x.id===shotTeam?'background:var(--ink);color:var(--bg)':''}">${esc(x.team.displayName)}</button>`).join('')}</div>
+  return `<div class="bar" style="margin-bottom:10px">${cs.map(x=>`<button data-shot="${x.id}" class="${x.id===shotTeam?'on':''}">${esc(x.team.displayName)}</button>`).join('')}</div>
     ${courtSVG(mine.map(p=>dot(p)).join(''))}
     <div class="shotsum"><span>投籃 <b>${made.length}/${mine.length}</b>${pct(made.length,mine.length)}</span><span>三分 <b>${threeMade.length}/${threes.length}</b>${pct(threeMade.length,threes.length)}</span></div>
     <div class="wpinfo"><svg width="12" height="12" viewBox="0 0 12 12" style="vertical-align:-1px"><circle cx="6" cy="6" r="4" fill="var(--ink)"/></svg> 命中 &nbsp; <svg width="12" height="12" viewBox="0 0 12 12" style="vertical-align:-1px"><path d="M2,2L10,10M10,2L2,10" stroke="var(--acc)" stroke-width="1.6"/></svg> 未進 · 不含罰球</div>`;

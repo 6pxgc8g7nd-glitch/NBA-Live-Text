@@ -174,7 +174,7 @@ async function renderTeam(first){
     const rec=t.record?.items?.find(x=>x.type==='total')||t.record?.items?.[0];
     const hero=`<div class="hero" style="border-top-color:${/^#(0|1)[0-9a-f]{5}$/i.test(color)||t.color==='000000'?'var(--ink)':color}">
       <div class="teams" style="justify-content:flex-start;gap:16px;text-align:left"><img src="${esc(logo(t))}" alt="">
-      <div><div style="font:900 22px/1.2 var(--serif)">${esc(t.displayName)}</div><div class="mid">${esc(rec?.summary?'戰績 '+rec.summary:'')}${t.standingSummary?' · '+esc(standingZh(t.standingSummary)):''}</div></div></div></div>`;
+      <div><div style="font:900 22px/1.2 var(--sans)">${esc(t.displayName)}</div><div class="mid">${esc(rec?.summary?'戰績 '+rec.summary:'')}${t.standingSummary?' · '+esc(standingZh(t.standingSummary)):''}</div></div></div></div>`;
     const tabs=`<div class="tabs"><button data-tt="sched" class="${teamTab==='sched'?'on':''}">賽程</button><button data-tt="roster" class="${teamTab==='roster'?'on':''}">陣容</button></div>`;
     let body='';
     if(teamTab==='sched'){
