@@ -165,58 +165,129 @@ async function openPlayer(id){
 }
 
 /* ---------- 重播(已結束的比賽) ---------- */
-const rp={id:null,idx:0,playing:false,speed:30,timer:null};
+const rp={id:null,idx:0,playing:false,timer:null,
+  speed:(()=>{try{return +localStorage.rpSpeed||30}catch(e){return 30}})(),
+  hi:(()=>{try{return localStorage.rpHi==='1'}catch(e){return false}})(),
+  drawn:0,sa:0,sh:0,step:null};
+const rpSave=()=>{try{localStorage.rpSpeed=rp.speed;localStorage.rpHi=rp.hi?'1':'0'}catch(e){}};
 function rpStop(){clearTimeout(rp.timer);rp.playing=false}
 function replayHTML(d){
-  if(!(d.plays||[]).length)return '<div class="empty">沒有逐球紀錄,無法重播</div>';
+  const plays=d.plays||[];
+  if(!plays.length)return '<div class="empty">沒有逐球紀錄,無法重播</div>';
+  const w=d.winprobability||[];
   return `<div id="rp">
-    <div class="rpscore"><div class="rpt" id="rpt"></div><div class="rps" id="rps"></div></div>
-    <div class="rpctl"><button id="rpp"></button><button id="rpr" title="從頭開始">↺</button><span class="rpsp">${[1,10,30,100].map(v=>`<button data-sp="${v}">×${v}</button>`).join('')}</span></div>
-    <input type="range" id="rpl" min="0" max="${d.plays.length}" value="0" aria-label="重播進度">
+    <div class="rpbar">
+      <div class="rpscore"><div class="rpt" id="rpt"></div><div class="rps" id="rps"></div><div class="rpnow" id="rpn"></div></div>
+      <div class="rpctl">
+        <button id="rppv" title="上一筆 (←)">⏮</button><button id="rpp" title="播放 / 暫停 (空白鍵)"></button><button id="rpnx" title="下一筆 (→)">⏭</button><button id="rpr" title="從頭開始">↺</button>
+        <span class="rpsp">${[1,10,30,100].map(v=>`<button data-sp="${v}" title="↑↓ 調速">×${v}</button>`).join('')}</span>
+      </div>
+      <input type="range" id="rpl" min="0" max="${plays.length}" value="0" aria-label="重播進度">
+    </div>
+    <label class="rphi"><input type="checkbox" id="rphi" style="width:auto;min-height:0"> 只播放得分回合(跳過其他)</label>
+    ${w.length>1?'<div class="rpw"><svg id="rpwsvg" viewBox="0 0 400 60" preserveAspectRatio="none"></svg><div class="wpinfo" style="min-height:0;margin:2px 0 8px">主隊勝率走勢,點一下可跳到那個時間點</div></div>':''}
     <div class="rpq" id="rpq"></div>
     <ul class="plays" id="rpf"></ul>
     <div class="sec">到目前為止的投籃</div><div id="rpc"></div>
+    <div class="foot" style="margin-top:14px">快捷鍵:空白鍵 播放/暫停 · ← → 上一筆/下一筆 · ↑ ↓ 調速</div>
   </div>`;
 }
 function bindReplay(d,cs){
   const plays=d.plays||[];if(!plays.length||!$('#rp'))return;
   if(rp.id!==view.id){rp.id=view.id;rp.idx=0}
-  rpStop();
+  rpStop();rp.drawn=-1;
   const n=plays.length,away=cs.find(x=>x.homeAway==='away'),home=cs.find(x=>x.homeAway==='home');
   const col={};cs.forEach(x=>col[x.id]=teamColor(x.team,'#888'));
   const abbr={};cs.forEach(x=>abbr[x.id]=x.team.abbreviation);
   const qOf=p=>p.period?.number>4?'OT'+(p.period.number-4):'Q'+(p.period?.number??'');
+  const txt=p=>lang==='zh'?zhPlay(p.text):p.text;
+  const bar=$('.rpbar');if(bar)bar.style.top=(document.querySelector('header')?.offsetHeight||56)+'px';
   const starts=[];plays.forEach((p,i)=>{const q=p.period?.number;if(q&&!starts.some(s=>s[0]===q))starts.push([q,i])});
   $('#rpq').innerHTML=starts.map(([q,i])=>`<button data-i="${i}">${q>4?'OT'+(q-4):'第 '+q+' 節'}</button>`).join('');
+  $('#rphi').checked=rp.hi;
+
+  // 迷你勝率圖(可點擊跳轉)
+  const wsvg=$('#rpwsvg'),wp=d.winprobability||[];
+  if(wsvg){
+    const m=wp.length,pts=wp.map((x,i)=>`${(i/(m-1)*400).toFixed(1)},${((1-x.homeWinPercentage)*60).toFixed(1)}`).join(' ');
+    const byId=new Map(plays.map((p,i)=>[String(p.id),i]));let last=1,ticks='';
+    wp.forEach((x,i)=>{const pi=byId.get(String(x.playId));const q=pi!=null?plays[pi].period?.number:0;if(q&&q>last){ticks+=`<line x1="${i/(m-1)*400}" x2="${i/(m-1)*400}" y1="0" y2="60" stroke="var(--line)" vector-effect="non-scaling-stroke"/>`;last=q}});
+    wsvg.innerHTML=`${ticks}<line x1="0" x2="400" y1="30" y2="30" stroke="var(--dim)" stroke-dasharray="3 3" vector-effect="non-scaling-stroke"/><polyline points="${pts}" fill="none" stroke="var(--ink)" stroke-width="1.5" vector-effect="non-scaling-stroke"/><line id="rpwc" x1="0" x2="0" y1="0" y2="60" stroke="var(--acc)" stroke-width="2" vector-effect="non-scaling-stroke"/>`;
+    wsvg.onclick=e=>{const r=wsvg.getBoundingClientRect();rp.idx=Math.max(1,Math.round((e.clientX-r.left)/r.width*n));update()};
+  }
+
   const sync=()=>{
     $('#rpp').textContent=rp.playing?'⏸ 暫停':rp.idx>=n?'↻ 再看一次':'▶ 播放';
     document.querySelectorAll('[data-sp]').forEach(b=>b.classList.toggle('on',+b.dataset.sp===rp.speed));
     $('#rpl').value=rp.idx;
+    $('#rppv').disabled=rp.idx<=0;$('#rpnx').disabled=rp.idx>=n;
+    const c=$('#rpwc');if(c){const x=rp.idx/n*400;c.setAttribute('x1',x);c.setAttribute('x2',x)}
   };
   const update=()=>{
     const i=rp.idx,cur=plays[i-1];
+    const a=cur?cur.awayScore:0,h=cur?cur.homeScore:0;
     $('#rpt').textContent=cur?`${qOf(cur)} ${cur.clock?.displayValue||''}`:'比賽尚未開始';
-    $('#rps').innerHTML=`<span>${esc(away.team.abbreviation)}</span><b>${cur?cur.awayScore:0}</b><i>:</i><b>${cur?cur.homeScore:0}</b><span>${esc(home.team.abbreviation)}</span>`;
-    $('#rpf').innerHTML=plays.slice(Math.max(0,i-12),i).reverse().map(p=>`<li class="${p.scoringPlay?'pt':''}"><span class="t">${qOf(p)} ${esc(p.clock?.displayValue||'')}</span><span class="x" style="flex:1">${p.team?.id&&abbr[p.team.id]?`<small style="color:var(--acc)">[${esc(abbr[p.team.id])}]</small> `:''}${esc(lang==='zh'?zhPlay(p.text):p.text)}</span><span class="sc">${p.awayScore}-${p.homeScore}</span></li>`).join('')||'<li><span class="x">按「播放」開始重播</span></li>';
-    $('#rpc').innerHTML=courtSVG(plays.slice(0,i).filter(isShot).map(p=>dot(p,col[p.team?.id]||'var(--ink)',col[p.team?.id]||'var(--acc)')).join(''))+`<div class="wpinfo" style="text-align:center">${cs.map(x=>`<span style="color:${col[x.id]};font-weight:700">● ${esc(x.team.abbreviation)}</span>`).join(' &nbsp; ')} · 圓點命中、叉叉未進</div>`;
+    $('#rps').innerHTML=`<span>${esc(away.team.abbreviation)}</span><b class="${a>rp.sa&&i>0?'flash':''}">${a}</b><i>:</i><b class="${h>rp.sh&&i>0?'flash':''}">${h}</b><span>${esc(home.team.abbreviation)}</span>`;
+    rp.sa=a;rp.sh=h;
+    $('#rpn').className='rpnow'+(cur?.scoringPlay?' pt':'');
+    $('#rpn').innerHTML=cur?`${cur.team?.id&&abbr[cur.team.id]?`<small>[${esc(abbr[cur.team.id])}]</small> `:''}${esc(txt(cur))}`:'按「播放」或空白鍵開始重播';
+    $('#rpf').innerHTML=plays.slice(Math.max(0,i-12),i).reverse().map(p=>`<li class="${p.scoringPlay?'pt':''}"><span class="t">${qOf(p)} ${esc(p.clock?.displayValue||'')}</span><span class="x" style="flex:1">${p.team?.id&&abbr[p.team.id]?`<small style="color:var(--acc)">[${esc(abbr[p.team.id])}]</small> `:''}${esc(txt(p))}</span><span class="sc">${p.awayScore}-${p.homeScore}</span></li>`).join('');
+    // 投籃圖:往前一步時只補畫新增的點,其餘情況整張重畫
+    const dotOf=p=>dot(p,col[p.team?.id]||'var(--ink)',col[p.team?.id]||'var(--acc)');
+    const svg=$('#rpc .court');
+    if(svg&&rp.drawn>=0&&i>rp.drawn){svg.insertAdjacentHTML('beforeend',plays.slice(rp.drawn,i).filter(isShot).map(dotOf).join(''))}
+    else{$('#rpc').innerHTML=courtSVG(plays.slice(0,i).filter(isShot).map(dotOf).join(''))+`<div class="wpinfo" style="text-align:center">${cs.map(x=>`<span style="color:${col[x.id]};font-weight:700">● ${esc(x.team.abbreviation)}</span>`).join(' &nbsp; ')} · 圓點命中、叉叉未進</div>`}
+    rp.drawn=i;
     sync();
+  };
+  const nextIdx=()=>{ // 下一個要顯示到的位置
+    if(!rp.hi)return rp.idx+1;
+    for(let j=rp.idx;j<n;j++)if(plays[j].scoringPlay)return j+1;
+    return n;
+  };
+  const prevIdx=()=>{
+    if(!rp.hi)return rp.idx-1;
+    for(let j=rp.idx-2;j>=0;j--)if(plays[j].scoringPlay)return j+1;
+    return 0;
   };
   const tick=()=>{
     if(!$('#rp')||view.type!=='game'||tab!=='replay'){rpStop();return}
     if(rp.idx>=n){rpStop();sync();return}
-    rp.idx++;update();
+    rp.idx=nextIdx();update();
     if(rp.idx>=n){rpStop();sync();return}
-    const dw=Date.parse(plays[rp.idx].wallclock)-Date.parse(plays[rp.idx-1].wallclock);
-    rp.timer=setTimeout(tick,Math.max(150,Math.min(4000,(isNaN(dw)?1500:dw)/rp.speed)));
+    let delay;
+    if(rp.hi)delay=Math.max(200,Math.min(1500,12000/rp.speed));
+    else{const dw=Date.parse(plays[rp.idx].wallclock)-Date.parse(plays[rp.idx-1].wallclock);delay=Math.max(150,Math.min(4000,(isNaN(dw)?1500:dw)/rp.speed))}
+    rp.timer=setTimeout(tick,delay);
   };
-  $('#rpp').onclick=()=>{
+  const toggle=()=>{
     if(rp.playing){rpStop();sync();return}
     if(rp.idx>=n)rp.idx=0;
     rp.playing=true;update();tick();
   };
+  const stepBy=dir=>{rpStop();rp.idx=Math.max(0,Math.min(n,dir>0?nextIdx():prevIdx()));update()};
+  const speeds=[1,10,30,100];
+  const setSpeed=v=>{rp.speed=v;rpSave();sync()};
+  rp.step={toggle,stepBy,faster:()=>setSpeed(speeds[Math.min(3,speeds.indexOf(rp.speed)+1)]||30),slower:()=>setSpeed(speeds[Math.max(0,speeds.indexOf(rp.speed)-1)]||30)};
+
+  $('#rpp').onclick=toggle;
+  $('#rppv').onclick=()=>stepBy(-1);$('#rpnx').onclick=()=>stepBy(1);
   $('#rpr').onclick=()=>{rpStop();rp.idx=0;update()};
-  document.querySelectorAll('[data-sp]').forEach(b=>b.onclick=()=>{rp.speed=+b.dataset.sp;sync()});
+  document.querySelectorAll('[data-sp]').forEach(b=>b.onclick=()=>setSpeed(+b.dataset.sp));
   $('#rpl').oninput=e=>{rp.idx=+e.target.value;update()};
+  $('#rphi').onchange=e=>{rp.hi=e.target.checked;rpSave()};
   document.querySelectorAll('#rpq button').forEach(b=>b.onclick=()=>{rp.idx=+b.dataset.i+1;update()});
   update();
 }
+// 快捷鍵與背景暫停(只註冊一次)
+document.addEventListener('keydown',e=>{
+  if(!rp.step||!document.getElementById('rp')||view.type!=='game'||tab!=='replay')return;
+  if(e.target.closest?.('input[type=text],input[type=date],textarea,select')||e.metaKey||e.ctrlKey||e.altKey)return;
+  const k=e.key;
+  if(k===' '&&!e.target.closest?.('button')){e.preventDefault();rp.step.toggle()}
+  else if(k==='ArrowRight'&&e.target.id!=='rpl'){e.preventDefault();rp.step.stepBy(1)}
+  else if(k==='ArrowLeft'&&e.target.id!=='rpl'){e.preventDefault();rp.step.stepBy(-1)}
+  else if(k==='ArrowUp'){e.preventDefault();rp.step.faster()}
+  else if(k==='ArrowDown'){e.preventDefault();rp.step.slower()}
+});
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&rp.playing){rpStop();const b=document.getElementById('rpp');if(b)b.textContent='▶ 播放'}});
