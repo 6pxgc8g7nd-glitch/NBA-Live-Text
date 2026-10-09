@@ -96,6 +96,18 @@ tr+tr td{border-top:1px solid var(--line)}
 .ph img{width:84px;height:62px;object-fit:cover;object-position:top;background:var(--card);border:1px solid var(--line)}
 .pn{font:900 20px/1.2 var(--serif)}
 .pi{font-size:12px;color:var(--dim);margin-top:2px}
+.rpscore{text-align:center;border-top:4px solid var(--ink);border-bottom:1px solid var(--ink);padding:10px 0;margin-bottom:10px;background:var(--card)}
+.rpt{color:var(--dim);font-size:13px;letter-spacing:.06em}
+.rps{display:flex;justify-content:center;align-items:baseline;gap:14px;font-family:var(--serif)}
+.rps b{font-size:46px;font-weight:900;font-variant-numeric:tabular-nums;min-width:1.6em;color:var(--ink)}
+.rps span{font-size:16px;font-weight:700}
+.rps i{font-style:normal;font-size:30px;color:var(--dim)}
+.rpctl{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:8px}
+.rpsp{display:flex;gap:4px;margin-left:auto}
+.rpctl button.on,.rpq button:hover{background:var(--ink);color:var(--bg)}
+#rpl{width:100%;accent-color:var(--acc);min-height:0;padding:0;border:0;background:transparent}
+.rpq{display:flex;gap:6px;flex-wrap:wrap;margin:6px 0 10px}
+.rpq button{min-height:28px;padding:1px 10px;font-size:13px}
 .foot{color:var(--dim);font-size:12px;text-align:center;margin:30px 0;font-family:var(--serif)}
 </style>
 </head>
@@ -193,17 +205,18 @@ async function renderGame(first){
         ${plays.length?`<ul class="plays">${plays.map(p=>`<li class="${p.scoringPlay?'pt':''}"><span class="t">${p.period?.number>4?'OT'+(p.period.number-4):'Q'+(p.period?.number??'')} ${esc(p.clock?.displayValue||'')}</span><span class="x" style="flex:1">${p.team?.id&&abbr[p.team.id]?`<small style="color:var(--acc)">[${esc(abbr[p.team.id])}]</small> `:''}${esc(lang==='zh'?zhPlay(p.text):p.text)}</span><span class="sc">${p.awayScore}-${p.homeScore}</span></li>`).join('')}</ul>`:'<div class="empty">尚無逐球紀錄</div>'}`
       :tab==='wp'?wpHTML(d,cs)
       :tab==='shot'?shotHTML(d,cs)
+      :tab==='replay'?replayHTML(d)
       :(d.boxscore?.players||[]).map(boxTable).join('')||'<div class="empty">尚無球員數據</div>';
     const scrollY=window.scrollY;
     app.innerHTML=`<button class="back" id="bk">‹ 返回賽程</button>
       <div class="hero"><div class="mid" style="text-align:center;margin-bottom:8px;${live?'color:var(--live);font-weight:600':''}">${esc(lbl)}</div>
-      <div class="teams">${cs.map(x=>`<div>${starHTML(x.id)}<br><img src="${logo(x.team)}" alt=""><div>${esc(x.team.displayName)}</div></div>`).join('<div class="big">'+(pre?'VS':cs.map(x=>esc(x.score)).join(' : '))+'</div>')}</div>
-      ${pre?'':ls}${seriesText(c)?`<div class="series" style="text-align:center">${esc(seriesText(c))}</div>`:''}</div>
-      <div class="tabs"><button data-t="plays" class="${tab==='plays'?'on':''}">文字轉播</button><button data-t="box" class="${tab==='box'?'on':''}">球員數據</button><button data-t="wp" class="${tab==='wp'?'on':''}">勝率走勢</button><button data-t="shot" class="${tab==='shot'?'on':''}">投籃圖</button></div>${body}`;
+      <div class="teams">${cs.map(x=>`<div>${starHTML(x.id)}<br><img src="${logo(x.team)}" alt=""><div>${esc(x.team.displayName)}</div></div>`).join('<div class="big">'+(pre?'VS':tab==='replay'?'重播':cs.map(x=>esc(x.score)).join(' : '))+'</div>')}</div>
+      ${pre||tab==='replay'?'':ls}${seriesText(c)&&tab!=='replay'?`<div class="series" style="text-align:center">${esc(seriesText(c))}</div>`:''}</div>
+      <div class="tabs"><button data-t="plays" class="${tab==='plays'?'on':''}">文字轉播</button><button data-t="box" class="${tab==='box'?'on':''}">球員數據</button><button data-t="wp" class="${tab==='wp'?'on':''}">勝率走勢</button><button data-t="shot" class="${tab==='shot'?'on':''}">投籃圖</button>${s.type.completed&&(d.plays||[]).length?`<button data-t="replay" class="${tab==='replay'?'on':''}">重播</button>`:''}</div>${body}`;
     window.scrollTo(0,scrollY);
     $('#bk').onclick=openList;
     document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{tab=b.dataset.t;renderGame()});
-    bindStars(app,()=>renderGame());bindPlayers();if(tab==='wp')bindWp();if(tab==='shot')bindShot(()=>renderGame());
+    bindStars(app,()=>renderGame());bindPlayers();if(tab==='wp')bindWp();if(tab==='shot')bindShot(()=>renderGame());if(tab==='replay')bindReplay(d,cs);
     const lg=$('#lg');if(lg)lg.onclick=()=>{lang=lang==='zh'?'en':'zh';try{localStorage.lang=lang}catch(e){}renderGame()};
     const os=$('#os');if(os)os.onchange=()=>{onlyScore=os.checked;renderGame()};
     if(!s.type.completed)schedule(live?5000:30000,()=>renderGame());

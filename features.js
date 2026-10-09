@@ -85,20 +85,13 @@ function bindWp(){
 }
 
 /* ---------- 投籃圖 ---------- */
-let shotTeam=null;
-function shotHTML(d,cs){
-  const shots=(d.plays||[]).filter(p=>p.shootingPlay&&p.coordinate&&p.coordinate.x>=0&&p.coordinate.x<=50&&p.coordinate.y>=-3&&p.coordinate.y<=47&&!/free throw/i.test(p.type?.text||''));
-  if(!shots.length)return '<div class="empty">尚無投籃座標資料</div>';
-  if(!shotTeam||!cs.some(x=>x.id===shotTeam))shotTeam=cs[0].id;
-  const mine=shots.filter(p=>p.team?.id===shotTeam);
-  const made=mine.filter(p=>p.scoringPlay),threes=mine.filter(p=>/three point/i.test(p.text)),threeMade=threes.filter(p=>p.scoringPlay);
-  const pct=(a,b)=>b?` (${(a/b*100).toFixed(0)}%)`:'';
-  const dot=p=>{const x=p.coordinate.x,y=47-Math.max(0,p.coordinate.y);return p.scoringPlay
-    ?`<circle cx="${x}" cy="${y}" r=".95" fill="var(--ink)" stroke="var(--bg)" stroke-width=".25"/>`
-    :`<path d="M${x-.7},${y-.7}L${x+.7},${y+.7}M${x+.7},${y-.7}L${x-.7},${y+.7}" stroke="var(--acc)" stroke-width=".35" stroke-linecap="round"/>`};
+const isShot=p=>p.shootingPlay&&p.coordinate&&p.coordinate.x>=0&&p.coordinate.x<=50&&p.coordinate.y>=-3&&p.coordinate.y<=47&&!/free throw/i.test(p.type?.text||'');
+const dot=(p,color,bg)=>{const x=p.coordinate.x,y=47-Math.max(0,p.coordinate.y);return p.scoringPlay
+  ?`<circle cx="${x}" cy="${y}" r=".95" fill="${color||'var(--ink)'}" stroke="var(--bg)" stroke-width=".25"/>`
+  :`<path d="M${x-.7},${y-.7}L${x+.7},${y+.7}M${x+.7},${y-.7}L${x-.7},${y+.7}" stroke="${bg||'var(--acc)'}" stroke-width=".35" stroke-linecap="round"/>`};
+function courtSVG(inner){
   const L='stroke="var(--dim)" stroke-width=".25" fill="none"';
-  return `<div class="bar" style="margin-bottom:10px">${cs.map(x=>`<button data-shot="${x.id}" class="${x.id===shotTeam?'on':''}" style="${x.id===shotTeam?'background:var(--ink);color:var(--bg)':''}">${esc(x.team.displayName)}</button>`).join('')}</div>
-    <svg class="court" viewBox="-1 -1 52 49" role="img" aria-label="投籃分布圖">
+  return `<svg class="court" viewBox="-1 -1 52 49" role="img" aria-label="投籃分布圖">
       <rect x="0" y="0" width="50" height="47" ${L}/>
       <rect x="17" y="28" width="16" height="19" ${L}/>
       <circle cx="25" cy="28" r="6" ${L}/>
@@ -106,8 +99,19 @@ function shotHTML(d,cs){
       <path d="M21,41.75 A4,4 0 0 1 29,41.75" ${L}/>
       <line x1="22" x2="28" y1="43" y2="43" stroke="var(--dim)" stroke-width=".5"/>
       <circle cx="25" cy="41.75" r=".75" stroke="var(--acc)" stroke-width=".3" fill="none"/>
-      ${mine.map(dot).join('')}
-    </svg>
+      ${inner}
+    </svg>`;
+}
+let shotTeam=null;
+function shotHTML(d,cs){
+  const shots=(d.plays||[]).filter(isShot);
+  if(!shots.length)return '<div class="empty">尚無投籃座標資料</div>';
+  if(!shotTeam||!cs.some(x=>x.id===shotTeam))shotTeam=cs[0].id;
+  const mine=shots.filter(p=>p.team?.id===shotTeam);
+  const made=mine.filter(p=>p.scoringPlay),threes=mine.filter(p=>/three point/i.test(p.text)),threeMade=threes.filter(p=>p.scoringPlay);
+  const pct=(a,b)=>b?` (${(a/b*100).toFixed(0)}%)`:'';
+  return `<div class="bar" style="margin-bottom:10px">${cs.map(x=>`<button data-shot="${x.id}" class="${x.id===shotTeam?'on':''}" style="${x.id===shotTeam?'background:var(--ink);color:var(--bg)':''}">${esc(x.team.displayName)}</button>`).join('')}</div>
+    ${courtSVG(mine.map(p=>dot(p)).join(''))}
     <div class="shotsum"><span>投籃 <b>${made.length}/${mine.length}</b>${pct(made.length,mine.length)}</span><span>三分 <b>${threeMade.length}/${threes.length}</b>${pct(threeMade.length,threes.length)}</span></div>
     <div class="wpinfo"><svg width="12" height="12" viewBox="0 0 12 12" style="vertical-align:-1px"><circle cx="6" cy="6" r="4" fill="var(--ink)"/></svg> 命中 &nbsp; <svg width="12" height="12" viewBox="0 0 12 12" style="vertical-align:-1px"><path d="M2,2L10,10M10,2L2,10" stroke="var(--acc)" stroke-width="1.6"/></svg> 未進 · 不含罰球</div>`;
 }
@@ -170,4 +174,61 @@ async function openPlayer(id){
     m.innerHTML='<div class="mc"><button class="mx" aria-label="關閉">✕</button><div class="empty">讀取球員資料失敗</div></div>';
     m.querySelector('.mx').onclick=close;
   }
+}
+
+/* ---------- 重播(已結束的比賽) ---------- */
+const rp={id:null,idx:0,playing:false,speed:30,timer:null};
+function rpStop(){clearTimeout(rp.timer);rp.playing=false}
+function replayHTML(d){
+  if(!(d.plays||[]).length)return '<div class="empty">沒有逐球紀錄,無法重播</div>';
+  return `<div id="rp">
+    <div class="rpscore"><div class="rpt" id="rpt"></div><div class="rps" id="rps"></div></div>
+    <div class="rpctl"><button id="rpp"></button><button id="rpr" title="從頭開始">↺</button><span class="rpsp">${[1,10,30,100].map(v=>`<button data-sp="${v}">×${v}</button>`).join('')}</span></div>
+    <input type="range" id="rpl" min="0" max="${d.plays.length}" value="0" aria-label="重播進度">
+    <div class="rpq" id="rpq"></div>
+    <ul class="plays" id="rpf"></ul>
+    <div class="sec">到目前為止的投籃</div><div id="rpc"></div>
+  </div>`;
+}
+function bindReplay(d,cs){
+  const plays=d.plays||[];if(!plays.length||!$('#rp'))return;
+  if(rp.id!==view.id){rp.id=view.id;rp.idx=0}
+  rpStop();
+  const n=plays.length,away=cs.find(x=>x.homeAway==='away'),home=cs.find(x=>x.homeAway==='home');
+  const col={};cs.forEach(x=>col[x.id]=teamColor(x.team,'#888'));
+  const abbr={};cs.forEach(x=>abbr[x.id]=x.team.abbreviation);
+  const qOf=p=>p.period?.number>4?'OT'+(p.period.number-4):'Q'+(p.period?.number??'');
+  const starts=[];plays.forEach((p,i)=>{const q=p.period?.number;if(q&&!starts.some(s=>s[0]===q))starts.push([q,i])});
+  $('#rpq').innerHTML=starts.map(([q,i])=>`<button data-i="${i}">${q>4?'OT'+(q-4):'第 '+q+' 節'}</button>`).join('');
+  const sync=()=>{
+    $('#rpp').textContent=rp.playing?'⏸ 暫停':rp.idx>=n?'↻ 再看一次':'▶ 播放';
+    document.querySelectorAll('[data-sp]').forEach(b=>b.classList.toggle('on',+b.dataset.sp===rp.speed));
+    $('#rpl').value=rp.idx;
+  };
+  const update=()=>{
+    const i=rp.idx,cur=plays[i-1];
+    $('#rpt').textContent=cur?`${qOf(cur)} ${cur.clock?.displayValue||''}`:'比賽尚未開始';
+    $('#rps').innerHTML=`<span>${esc(away.team.abbreviation)}</span><b>${cur?cur.awayScore:0}</b><i>:</i><b>${cur?cur.homeScore:0}</b><span>${esc(home.team.abbreviation)}</span>`;
+    $('#rpf').innerHTML=plays.slice(Math.max(0,i-12),i).reverse().map(p=>`<li class="${p.scoringPlay?'pt':''}"><span class="t">${qOf(p)} ${esc(p.clock?.displayValue||'')}</span><span class="x" style="flex:1">${p.team?.id&&abbr[p.team.id]?`<small style="color:var(--acc)">[${esc(abbr[p.team.id])}]</small> `:''}${esc(lang==='zh'?zhPlay(p.text):p.text)}</span><span class="sc">${p.awayScore}-${p.homeScore}</span></li>`).join('')||'<li><span class="x">按「播放」開始重播</span></li>';
+    $('#rpc').innerHTML=courtSVG(plays.slice(0,i).filter(isShot).map(p=>dot(p,col[p.team?.id]||'var(--ink)',col[p.team?.id]||'var(--acc)')).join(''))+`<div class="wpinfo" style="text-align:center">${cs.map(x=>`<span style="color:${col[x.id]};font-weight:700">● ${esc(x.team.abbreviation)}</span>`).join(' &nbsp; ')} · 圓點命中、叉叉未進</div>`;
+    sync();
+  };
+  const tick=()=>{
+    if(!$('#rp')||view.type!=='game'||tab!=='replay'){rpStop();return}
+    if(rp.idx>=n){rpStop();sync();return}
+    rp.idx++;update();
+    if(rp.idx>=n){rpStop();sync();return}
+    const dw=Date.parse(plays[rp.idx].wallclock)-Date.parse(plays[rp.idx-1].wallclock);
+    rp.timer=setTimeout(tick,Math.max(150,Math.min(4000,(isNaN(dw)?1500:dw)/rp.speed)));
+  };
+  $('#rpp').onclick=()=>{
+    if(rp.playing){rpStop();sync();return}
+    if(rp.idx>=n)rp.idx=0;
+    rp.playing=true;update();tick();
+  };
+  $('#rpr').onclick=()=>{rpStop();rp.idx=0;update()};
+  document.querySelectorAll('[data-sp]').forEach(b=>b.onclick=()=>{rp.speed=+b.dataset.sp;sync()});
+  $('#rpl').oninput=e=>{rp.idx=+e.target.value;update()};
+  document.querySelectorAll('#rpq button').forEach(b=>b.onclick=()=>{rp.idx=+b.dataset.i+1;update()});
+  update();
 }
