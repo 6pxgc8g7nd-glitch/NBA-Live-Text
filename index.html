@@ -76,10 +76,11 @@ tr+tr td{border-top:1px solid var(--line)}
   <button id="next">›</button>
 </header>
 <main id="app"></main>
+<script src="zh.js"></script>
 <script>
 const API='https://site.api.espn.com/apis/site/v2/sports/basketball/nba';
 const $=s=>document.querySelector(s), app=$('#app');
-let view={type:'list'}, timer=null, dateStr='', tab='plays', onlyScore=false;
+let view={type:'list'}, timer=null, dateStr='', tab='plays', onlyScore=false, lang=(()=>{try{return localStorage.lang||'zh'}catch(e){return 'zh'}})();
 
 const ymd=d=>d.replaceAll('-','');
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -149,7 +150,8 @@ async function renderGame(first){
     const abbr={};cs.forEach(x=>abbr[x.id]=x.team.abbreviation);
     const body=tab==='plays'
       ?`<label style="font-size:13px;color:var(--dim)"><input type="checkbox" id="os" ${onlyScore?'checked':''} style="width:auto;min-height:0"> 只看得分</label>
-        ${plays.length?`<ul class="plays">${plays.slice(0,300).map(p=>`<li class="${p.scoringPlay?'pt':''}"><span class="t">${p.period?.number>4?'OT'+(p.period.number-4):'Q'+(p.period?.number??'')} ${esc(p.clock?.displayValue||'')}</span><span class="x" style="flex:1">${p.team?.id&&abbr[p.team.id]?`<small style="color:var(--acc)">[${esc(abbr[p.team.id])}]</small> `:''}${esc(p.text)}</span><span class="sc">${p.awayScore}-${p.homeScore}</span></li>`).join('')}</ul>`:'<div class="empty">尚無逐球紀錄</div>'}`
+        <button id="lg" style="float:right;min-height:28px;padding:2px 10px;font-size:13px">${lang==='zh'?'顯示英文':'顯示中文'}</button>
+        ${plays.length?`<ul class="plays">${plays.slice(0,300).map(p=>`<li class="${p.scoringPlay?'pt':''}"><span class="t">${p.period?.number>4?'OT'+(p.period.number-4):'Q'+(p.period?.number??'')} ${esc(p.clock?.displayValue||'')}</span><span class="x" style="flex:1">${p.team?.id&&abbr[p.team.id]?`<small style="color:var(--acc)">[${esc(abbr[p.team.id])}]</small> `:''}${esc(lang==='zh'?zhPlay(p.text):p.text)}</span><span class="sc">${p.awayScore}-${p.homeScore}</span></li>`).join('')}</ul>`:'<div class="empty">尚無逐球紀錄</div>'}`
       :(d.boxscore?.players||[]).map(boxTable).join('')||'<div class="empty">尚無球員數據</div>';
     const scrollY=window.scrollY;
     app.innerHTML=`<button class="back" id="bk">‹ 返回賽程</button>
@@ -160,6 +162,7 @@ async function renderGame(first){
     window.scrollTo(0,scrollY);
     $('#bk').onclick=openList;
     document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{tab=b.dataset.t;renderGame()});
+    const lg=$('#lg');if(lg)lg.onclick=()=>{lang=lang==='zh'?'en':'zh';try{localStorage.lang=lang}catch(e){}renderGame()};
     const os=$('#os');if(os)os.onchange=()=>{onlyScore=os.checked;renderGame()};
     if(!s.type.completed)schedule(live?5000:30000,()=>renderGame());
   }catch(err){
