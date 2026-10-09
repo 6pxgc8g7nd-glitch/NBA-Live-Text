@@ -1,17 +1,5 @@
-// 附加功能:最愛球隊、勝率走勢、投籃圖、排名、球員小卡
+// 附加功能:勝率走勢、投籃圖、排名、球員小卡
 // 依賴 index.html 內的 API、get、esc、logo、view、app、$、schedule、zhPlay(呼叫時才用到,載入順序不影響)
-
-/* ---------- 最愛球隊 ---------- */
-const favs=new Set((()=>{try{return JSON.parse(localStorage.favs||'[]')}catch(e){return[]}})());
-const isFav=id=>favs.has(String(id));
-function toggleFav(id){
-  id=String(id);favs.has(id)?favs.delete(id):favs.add(id);
-  try{localStorage.favs=JSON.stringify([...favs])}catch(e){}
-}
-const starHTML=id=>`<button class="star ${isFav(id)?'on':''}" data-fav="${id}" aria-label="最愛球隊" title="${isFav(id)?'取消最愛':'加入最愛'}">${isFav(id)?'★':'☆'}</button>`;
-function bindStars(root,rerender){
-  root.querySelectorAll('.star').forEach(b=>b.onclick=e=>{e.stopPropagation();toggleFav(b.dataset.fav);rerender()});
-}
 
 /* ---------- 導覽(賽程 / 排名) ---------- */
 const navHTML=a=>`<div class="nav"><button data-nav="list" class="${a==='list'?'on':''}">賽程</button><button data-nav="standings" class="${a==='standings'?'on':''}">排名</button></div>`;
@@ -130,10 +118,10 @@ async function renderStandings(first){
     const tbl=c=>{
       const es=[...c.standings.entries].sort((a,b)=>num(a,'playoffSeed')-num(b,'playoffSeed'));
       return `<div class="sec">${c.name==='Eastern Conference'?'東區':c.name==='Western Conference'?'西區':esc(c.name)}</div><div class="scroll"><table class="stand"><tr><th>#</th><th>球隊</th><th>勝</th><th>負</th><th>勝率</th><th>勝差</th><th>近十場</th><th>連勝/敗</th></tr>`+
-        es.map((e,i)=>`<tr class="${i===5||i===9?'cut':''}"><td>${i+1}</td><td class="tm">${starHTML(e.team.id)}<img src="${logo(e.team)}" alt=""> ${esc(e.team.displayName)}</td><td>${esc(stat(e,'wins'))}</td><td>${esc(stat(e,'losses'))}</td><td>${esc(stat(e,'winPercent'))}</td><td>${esc(stat(e,'gamesBehind'))}</td><td>${esc(stat(e,'Last Ten Games'))}</td><td>${esc(stat(e,'streak'))}</td></tr>`).join('')+'</table></div>';
+        es.map((e,i)=>`<tr class="${i===5||i===9?'cut':''}"><td>${i+1}</td><td class="tm"><img src="${logo(e.team)}" alt=""> ${esc(e.team.displayName)}</td><td>${esc(stat(e,'wins'))}</td><td>${esc(stat(e,'losses'))}</td><td>${esc(stat(e,'winPercent'))}</td><td>${esc(stat(e,'gamesBehind'))}</td><td>${esc(stat(e,'Last Ten Games'))}</td><td>${esc(stat(e,'streak'))}</td></tr>`).join('')+'</table></div>';
     };
     app.innerHTML=navHTML('standings')+`<div class="foot" style="margin:6px 0 0;text-align:left">${esc(d.children?.[0]?.seasonDisplayName||d.seasons?.[0]?.displayName||'')} · 前 6 名直接晉級季後賽,第 7–10 名打附加賽(粗線分隔)</div>`+(d.children||[]).map(tbl).join('')+'<div class="foot">資料來源:ESPN 公開接口 · 非官方</div>';
-    bindNav();bindStars(app,()=>renderStandings());bindPlayers();
+    bindNav();bindPlayers();
     schedule(120000,()=>renderStandings());
   }catch(err){
     if(first)app.innerHTML=navHTML('standings')+'<div class="empty">讀取排名失敗,請稍後重試</div>',bindNav();
