@@ -57,6 +57,8 @@ tr+tr td{border-top:1px solid var(--line)}
 .tabs button{border:0;border-bottom:3px solid transparent;font:700 15px var(--serif);padding:6px 16px;margin-bottom:-1px}
 .tabs button:hover{background:transparent;color:var(--acc)}
 .tabs button.on{border-bottom-color:var(--ink);background:transparent;color:var(--ink)}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px}
+.bar button{min-height:30px;padding:2px 10px;font-size:13px}
 .plays{list-style:none;margin:0;padding:0}
 .plays li{display:flex;gap:10px;padding:8px 4px;border-bottom:1px solid var(--line)}
 .plays .t{width:84px;flex:none;color:var(--dim);font-size:12px;font-variant-numeric:tabular-nums}
@@ -149,8 +151,8 @@ async function renderGame(first){
     if(onlyScore)plays=plays.filter(p=>p.scoringPlay);
     const abbr={};cs.forEach(x=>abbr[x.id]=x.team.abbreviation);
     const body=tab==='plays'
-      ?`<label style="font-size:13px;color:var(--dim)"><input type="checkbox" id="os" ${onlyScore?'checked':''} style="width:auto;min-height:0"> 只看得分</label>
-        <button id="lg" style="float:right;min-height:28px;padding:2px 10px;font-size:13px">${lang==='zh'?'顯示英文':'顯示中文'}</button>
+      ?`<div class="bar"><label style="font-size:13px;color:var(--dim)"><input type="checkbox" id="os" ${onlyScore?'checked':''} style="width:auto;min-height:0"> 只看得分</label>
+        <button id="lg">${lang==='zh'?'顯示英文':'顯示中文'}</button></div>
         ${plays.length?`<ul class="plays">${plays.slice(0,300).map(p=>`<li class="${p.scoringPlay?'pt':''}"><span class="t">${p.period?.number>4?'OT'+(p.period.number-4):'Q'+(p.period?.number??'')} ${esc(p.clock?.displayValue||'')}</span><span class="x" style="flex:1">${p.team?.id&&abbr[p.team.id]?`<small style="color:var(--acc)">[${esc(abbr[p.team.id])}]</small> `:''}${esc(lang==='zh'?zhPlay(p.text):p.text)}</span><span class="sc">${p.awayScore}-${p.homeScore}</span></li>`).join('')}</ul>`:'<div class="empty">尚無逐球紀錄</div>'}`
       :(d.boxscore?.players||[]).map(boxTable).join('')||'<div class="empty">尚無球員數據</div>';
     const scrollY=window.scrollY;
