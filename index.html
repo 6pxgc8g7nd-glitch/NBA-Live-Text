@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0f1420">
+<meta name="color-scheme" content="dark">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="NBA Live">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<title>NBA 即時轉播</title>
+<style>
+:root{--bg:#0f1420;--card:#192031;--line:#2a3350;--tx:#e8ecf5;--dim:#8d97b3;--acc:#ff6a3d;--live:#ff3b3b}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 -apple-system,"PingFang TC","Noto Sans TC",sans-serif}
+html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:calc(10px + env(safe-area-inset-top)) calc(16px + env(safe-area-inset-right)) 10px calc(16px + env(safe-area-inset-left));display:flex;gap:10px;align-items:center}
+header h1{font-size:18px;margin:0;flex:1}
+header h1 b{color:var(--acc)}
+button,input{background:var(--card);color:var(--tx);border:1px solid var(--line);border-radius:8px;padding:6px 12px;font:inherit}
+button{cursor:pointer}
+button:hover{border-color:var(--acc)}
+main{max-width:860px;margin:0 auto;padding:16px 16px calc(24px + env(safe-area-inset-bottom));overscroll-behavior-y:contain}
+button,input{min-height:36px}
+.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.game{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer}
+.game:hover{border-color:var(--acc)}
+.st{font-size:12px;color:var(--dim);margin-bottom:6px;display:flex;justify-content:space-between}
+.st.live{color:var(--live);font-weight:600}
+.row{display:flex;align-items:center;gap:8px;padding:3px 0}
+.row img{width:28px;height:28px}
+.row .n{flex:1}
+.row .s{font-size:20px;font-weight:700;font-variant-numeric:tabular-nums}
+.row.lose{opacity:.55}
+.sec{margin:18px 0 8px;color:var(--dim);font-size:13px}
+.empty{color:var(--dim);text-align:center;padding:40px 0}
+.back{margin-bottom:12px}
+.hero{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px}
+.hero .teams{display:flex;align-items:center;justify-content:space-around;text-align:center}
+.hero img{width:56px;height:56px}
+.hero .big{font-size:40px;font-weight:800;font-variant-numeric:tabular-nums}
+.hero .mid{color:var(--dim);font-size:13px}
+table{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
+th,td{padding:4px 6px;text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{color:var(--dim);font-weight:500;border-bottom:1px solid var(--line)}
+.ls{margin-top:12px}
+.tabs{display:flex;gap:8px;margin:12px 0}
+.tabs button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.plays{list-style:none;margin:0;padding:0}
+.plays li{display:flex;gap:10px;padding:8px 4px;border-bottom:1px solid var(--line)}
+.plays .t{width:84px;flex:none;color:var(--dim);font-size:12px}
+.plays .sc{flex:none;font-variant-numeric:tabular-nums;color:var(--dim);font-size:12px;width:62px;text-align:right}
+.plays li.pt{background:rgba(255,106,61,.10)}
+.plays li.pt .x{font-weight:600}
+.scroll{overflow-x:auto}
+.foot{color:var(--dim);font-size:12px;text-align:center;margin:30px 0}
+</style>
+</head>
+<body>
+<header>
+  <h1><b>NBA</b> 即時轉播</h1>
+  <button id="prev">‹</button>
+  <input type="date" id="date">
+  <button id="next">›</button>
+</header>
+<main id="app"></main>
+<script>
+const API='https://site.api.espn.com/apis/site/v2/sports/basketball/nba';
+const $=s=>document.querySelector(s), app=$('#app');
+let view={type:'list'}, timer=null, dateStr='', tab='plays', onlyScore=false;
+
+const ymd=d=>d.replaceAll('-','');
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+async function get(u){const r=await fetch(u);if(!r.ok)throw new Error(r.status);return r.json()}
+const logo=t=>t?.logo||t?.logos?.[0]?.href||'';
+
+function stText(e){
+  const s=e.status,t=s.type;
+  if(t.state==='in')return {live:true,txt:'● LIVE '+t.shortDetail.replace(' - ',' ')};
+  if(t.state==='post')return {txt:t.shortDetail.includes('OT')?'已結束 '+t.shortDetail.replace('Final/','').replace('Final',''):'已結束'};
+  return {txt:new Date(e.date).toLocaleTimeString('zh-TW',{hour:'2-digit',minute:'2-digit'})+' 開打'};
+}
+
+function gameCard(e){
+  const c=e.competitions[0],cs=[...c.competitors].sort((a,b)=>a.homeAway==='away'?-1:1);
+  const st=stText(e),done=e.status.type.state==='post',show=e.status.type.state!=='pre';
+  const mx=Math.max(...cs.map(x=>+x.score||0));
+  return `<div class="game" data-id="${e.id}">
+    <div class="st ${st.live?'live':''}"><span>${esc(st.txt)}</span><span>${esc(c.broadcast||'')}</span></div>
+    ${cs.map(x=>`<div class="row ${done&&+x.score<mx?'lose':''}"><img src="${logo(x.team)}" alt=""><span class="n">${esc(x.team.displayName)}</span><span class="s">${show?esc(x.score):''}</span></div>`).join('')}
+  </div>`;
+}
+
+async function renderList(first){
+  try{
+    const d=await get(`${API}/scoreboard${dateStr?'?dates='+ymd(dateStr):''}`);
+    if(!dateStr){dateStr=d.day.date;$('#date').value=dateStr}
+    if(view.type!=='list')return;
+    const ev=d.events||[];
+    const g=k=>ev.filter(e=>e.status.type.state===k);
+    const sec=(t,a)=>a.length?`<div class="sec">${t}</div><div class="grid">${a.map(gameCard).join('')}</div>`:'';
+    app.innerHTML=ev.length?sec('進行中',g('in'))+sec('未開打',g('pre'))+sec('已結束',g('post'))+'<div class="foot">資料來源:ESPN 公開接口 · 非官方 · 進行中每 10 秒更新</div>':'<div class="empty">這天沒有比賽</div>';
+    document.querySelectorAll('.game').forEach(el=>el.onclick=()=>openGame(el.dataset.id));
+    schedule(g('in').length?10000:60000,()=>renderList());
+  }catch(err){
+    if(first)app.innerHTML='<div class="empty">讀取失敗,請稍後重試</div>';
+    schedule(15000,()=>renderList());
+  }
+}
+
+function schedule(ms,fn){clearTimeout(timer);timer=setTimeout(fn,ms)}
+
+function openGame(id){view={type:'game',id};tab='plays';history.replaceState(null,'','#'+id);renderGame(true)}
+function openList(){view={type:'list'};history.replaceState(null,'',location.pathname);renderList(true)}
+
+function boxTable(p){
+  const st=p.statistics[0];if(!st)return '';
+  const keep=[0,1,2,3,4,5,6,7,8,9,12,13];
+  const rows=st.athletes.filter(a=>!a.didNotPlay&&a.stats?.length);
+  return `<div class="scroll"><table><tr><th>${esc(p.team.displayName)}</th>${keep.map(i=>`<th>${esc(st.labels[i])}</th>`).join('')}</tr>`+
+    rows.map(a=>`<tr><td>${esc(a.athlete.shortName||a.athlete.displayName)}${a.starter?'':''}</td>${keep.map(i=>`<td>${esc(a.stats[i])}</td>`).join('')}</tr>`).join('')+`</table></div>`;
+}
+
+async function renderGame(first){
+  try{
+    const d=await get(`${API}/summary?event=${view.id}`);
+    if(view.type!=='game')return;
+    const c=d.header.competitions[0],cs=[...c.competitors].sort((a,b)=>a.homeAway==='away'?-1:1);
+    const s=c.status,live=s.type.state==='in',pre=s.type.state==='pre';
+    const lbl=live?'● LIVE '+s.type.shortDetail.replace(' - ',' '):pre?new Date(c.date).toLocaleString('zh-TW',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'})+' 開打':'已結束';
+    const nper=Math.max(4,...cs.map(x=>x.linescores?.length||0));
+    const per=i=>i<4?'Q'+(i+1):'OT'+(i-3);
+    const ls=`<table class="ls"><tr><th></th>${Array.from({length:nper},(_,i)=>`<th>${per(i)}</th>`).join('')}<th>總分</th></tr>`+
+      cs.map(x=>`<tr><td>${esc(x.team.abbreviation)}</td>${Array.from({length:nper},(_,i)=>`<td>${esc(x.linescores?.[i]?.displayValue??'-')}</td>`).join('')}<td><b>${esc(x.score??'')}</b></td></tr>`).join('')+'</table>';
+    let plays=(d.plays||[]).slice().reverse();
+    if(onlyScore)plays=plays.filter(p=>p.scoringPlay);
+    const abbr={};cs.forEach(x=>abbr[x.id]=x.team.abbreviation);
+    const body=tab==='plays'
+      ?`<label style="font-size:13px;color:var(--dim)"><input type="checkbox" id="os" ${onlyScore?'checked':''} style="width:auto"> 只看得分</label>
+        ${plays.length?`<ul class="plays">${plays.slice(0,300).map(p=>`<li class="${p.scoringPlay?'pt':''}"><span class="t">${p.period?.number>4?'OT'+(p.period.number-4):'Q'+(p.period?.number??'')} ${esc(p.clock?.displayValue||'')}</span><span class="x" style="flex:1">${p.team?.id&&abbr[p.team.id]?`<small style="color:var(--acc)">[${esc(abbr[p.team.id])}]</small> `:''}${esc(p.text)}</span><span class="sc">${p.awayScore}-${p.homeScore}</span></li>`).join('')}</ul>`:'<div class="empty">尚無逐球紀錄</div>'}`
+      :(d.boxscore?.players||[]).map(boxTable).join('')||'<div class="empty">尚無球員數據</div>';
+    const scrollY=window.scrollY;
+    app.innerHTML=`<button class="back" id="bk">‹ 返回賽程</button>
+      <div class="hero"><div class="mid" style="text-align:center;margin-bottom:8px;${live?'color:var(--live);font-weight:600':''}">${esc(lbl)}</div>
+      <div class="teams">${cs.map(x=>`<div><img src="${logo(x.team)}" alt=""><div>${esc(x.team.displayName)}</div></div>`).join('<div class="big">'+(pre?'VS':cs.map(x=>esc(x.score)).join(' : '))+'</div>')}</div>
+      ${pre?'':ls}</div>
+      <div class="tabs"><button data-t="plays" class="${tab==='plays'?'on':''}">文字轉播</button><button data-t="box" class="${tab==='box'?'on':''}">球員數據</button></div>${body}`;
+    window.scrollTo(0,scrollY);
+    $('#bk').onclick=openList;
+    document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{tab=b.dataset.t;renderGame()});
+    const os=$('#os');if(os)os.onchange=()=>{onlyScore=os.checked;renderGame()};
+    if(!s.type.completed)schedule(live?5000:30000,()=>renderGame());
+  }catch(err){
+    if(first)app.innerHTML='<button class="back" id="bk">‹ 返回賽程</button><div class="empty">讀取失敗</div>',$('#bk').onclick=openList;
+    schedule(10000,()=>renderGame());
+  }
+}
+
+function shift(n){const d=new Date((dateStr||new Date().toISOString().slice(0,10))+'T12:00:00');d.setDate(d.getDate()+n);setDate(d.toISOString().slice(0,10))}
+function setDate(v){if(!v)return;dateStr=v;$('#date').value=v;view={type:'list'};history.replaceState(null,'',location.pathname);renderList(true)}
+$('#date').onchange=e=>setDate(e.target.value);
+$('#prev').onclick=()=>shift(-1);
+$('#next').onclick=()=>shift(1);
+if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+if(/^#\d+$/.test(location.hash))openGame(location.hash.slice(1));else renderList(true);
+</script>
+</body>
+</html>
