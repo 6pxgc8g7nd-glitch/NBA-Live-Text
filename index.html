@@ -3,67 +3,74 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#0f1420">
-<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#f4efe4">
+<meta name="color-scheme" content="light dark">
+<script>try{if(localStorage.theme==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="NBA Live">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" href="icons/icon-192.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <title>NBA 即時轉播</title>
 <style>
-:root{--bg:#0f1420;--card:#192031;--line:#2a3350;--tx:#e8ecf5;--dim:#8d97b3;--acc:#ff6a3d;--live:#ff3b3b}
+:root{--bg:#f4efe4;--card:#fbf8f0;--line:#cfc7b4;--ink:#161616;--tx:#161616;--dim:#6f6a5e;--acc:#b3261e;--live:#c4161c;--hl:#efe3c2;--serif:"Noto Serif TC","Songti TC","Source Han Serif TC",Georgia,"Times New Roman",serif;--sans:-apple-system,"PingFang TC","Noto Sans TC",sans-serif}
+:root[data-theme=dark]{--bg:#16140f;--card:#1e1b14;--line:#3a3629;--ink:#f1ead8;--tx:#ece5d2;--dim:#9a937f;--acc:#ff7a5c;--live:#ff5a4d;--hl:#2d2818}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 -apple-system,"PingFang TC","Noto Sans TC",sans-serif}
 html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
-header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);padding:calc(10px + env(safe-area-inset-top)) calc(16px + env(safe-area-inset-right)) 10px calc(16px + env(safe-area-inset-left));display:flex;gap:10px;align-items:center}
-header h1{font-size:18px;margin:0;flex:1}
-header h1 b{color:var(--acc)}
-button,input{background:var(--card);color:var(--tx);border:1px solid var(--line);border-radius:8px;padding:6px 12px;font:inherit}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.55 var(--sans)}
+header{position:sticky;top:0;z-index:5;background:var(--bg);padding:calc(10px + env(safe-area-inset-top)) calc(16px + env(safe-area-inset-right)) 8px calc(16px + env(safe-area-inset-left));display:flex;gap:8px;align-items:center;border-bottom:3px double var(--ink)}
+header h1{font:900 22px/1.1 var(--serif);margin:0;flex:1;letter-spacing:.02em;color:var(--ink)}
+header h1 b{font-family:Georgia,serif;letter-spacing:.06em;margin-right:6px}
+button,input{background:transparent;color:var(--ink);border:1px solid var(--ink);border-radius:0;padding:5px 11px;font:inherit;min-height:36px}
 button{cursor:pointer}
-button:hover{border-color:var(--acc)}
+button:hover{background:var(--ink);color:var(--bg)}
+input[type=date]{font-size:14px;padding:4px 8px}
 main{max-width:860px;margin:0 auto;padding:16px 16px calc(24px + env(safe-area-inset-bottom));overscroll-behavior-y:contain}
-button,input{min-height:36px}
-.grid{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
-.game{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer}
-.game:hover{border-color:var(--acc)}
-.st{font-size:12px;color:var(--dim);margin-bottom:6px;display:flex;justify-content:space-between}
-.st.live{color:var(--live);font-weight:600}
-.row{display:flex;align-items:center;gap:8px;padding:3px 0}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+.game{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--ink);padding:10px 14px 12px;cursor:pointer}
+.game:hover{background:var(--hl)}
+.st{font-size:12px;color:var(--dim);margin-bottom:6px;display:flex;justify-content:space-between;letter-spacing:.04em}
+.st.live{color:var(--live);font-weight:700}
+.row{display:flex;align-items:center;gap:10px;padding:4px 0;border-top:1px solid var(--line)}
+.st+.row{border-top:0}
 .row img{width:28px;height:28px}
-.row .n{flex:1}
-.row .s{font-size:20px;font-weight:700;font-variant-numeric:tabular-nums}
-.row.lose{opacity:.55}
-.sec{margin:18px 0 8px;color:var(--dim);font-size:13px}
-.empty{color:var(--dim);text-align:center;padding:40px 0}
+.row .n{flex:1;font-family:var(--serif);font-weight:700}
+.row .s{font:800 22px var(--serif);font-variant-numeric:tabular-nums}
+.row.lose{opacity:.5}
+.sec{margin:26px 0 10px;font:900 16px var(--serif);color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:4px;letter-spacing:.2em}
+.empty{color:var(--dim);text-align:center;padding:40px 0;font-family:var(--serif)}
 .back{margin-bottom:12px}
-.hero{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px}
-.hero .teams{display:flex;align-items:center;justify-content:space-around;text-align:center}
+.hero{background:var(--card);border-top:4px solid var(--ink);border-bottom:1px solid var(--ink);padding:16px;margin-bottom:12px}
+.hero .teams{display:flex;align-items:center;justify-content:space-around;text-align:center;font-family:var(--serif);font-weight:700}
 .hero img{width:56px;height:56px}
-.hero .big{font-size:40px;font-weight:800;font-variant-numeric:tabular-nums}
-.hero .mid{color:var(--dim);font-size:13px}
+.hero .big{font:900 44px var(--serif);font-variant-numeric:tabular-nums;color:var(--ink)}
+.hero .mid{color:var(--dim);font-size:13px;letter-spacing:.06em}
 table{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
 th,td{padding:4px 6px;text-align:right;white-space:nowrap}
 th:first-child,td:first-child{text-align:left}
-th{color:var(--dim);font-weight:500;border-bottom:1px solid var(--line)}
+th{color:var(--ink);font-weight:700;border-bottom:1px solid var(--ink)}
+tr+tr td{border-top:1px solid var(--line)}
 .ls{margin-top:12px}
-.tabs{display:flex;gap:8px;margin:12px 0}
-.tabs button.on{background:var(--acc);border-color:var(--acc);color:#fff}
+.tabs{display:flex;gap:0;margin:16px 0 8px;border-bottom:1px solid var(--ink)}
+.tabs button{border:0;border-bottom:3px solid transparent;font:700 15px var(--serif);padding:6px 16px;margin-bottom:-1px}
+.tabs button:hover{background:transparent;color:var(--acc)}
+.tabs button.on{border-bottom-color:var(--ink);background:transparent;color:var(--ink)}
 .plays{list-style:none;margin:0;padding:0}
 .plays li{display:flex;gap:10px;padding:8px 4px;border-bottom:1px solid var(--line)}
-.plays .t{width:84px;flex:none;color:var(--dim);font-size:12px}
+.plays .t{width:84px;flex:none;color:var(--dim);font-size:12px;font-variant-numeric:tabular-nums}
 .plays .sc{flex:none;font-variant-numeric:tabular-nums;color:var(--dim);font-size:12px;width:62px;text-align:right}
-.plays li.pt{background:rgba(255,106,61,.10)}
-.plays li.pt .x{font-weight:600}
-.scroll{overflow-x:auto}
-.foot{color:var(--dim);font-size:12px;text-align:center;margin:30px 0}
+.plays li.pt{background:var(--hl);border-left:3px solid var(--acc)}
+.plays li.pt .x{font-weight:700}
+.scroll{overflow-x:auto;margin-bottom:18px}
+.foot{color:var(--dim);font-size:12px;text-align:center;margin:30px 0;font-family:var(--serif)}
 </style>
 </head>
 <body>
 <header>
   <h1><b>NBA</b> 即時轉播</h1>
+  <button id="theme" aria-label="切換深淺色" title="切換深淺色">◐</button>
   <button id="prev">‹</button>
   <input type="date" id="date">
   <button id="next">›</button>
@@ -141,7 +148,7 @@ async function renderGame(first){
     if(onlyScore)plays=plays.filter(p=>p.scoringPlay);
     const abbr={};cs.forEach(x=>abbr[x.id]=x.team.abbreviation);
     const body=tab==='plays'
-      ?`<label style="font-size:13px;color:var(--dim)"><input type="checkbox" id="os" ${onlyScore?'checked':''} style="width:auto"> 只看得分</label>
+      ?`<label style="font-size:13px;color:var(--dim)"><input type="checkbox" id="os" ${onlyScore?'checked':''} style="width:auto;min-height:0"> 只看得分</label>
         ${plays.length?`<ul class="plays">${plays.slice(0,300).map(p=>`<li class="${p.scoringPlay?'pt':''}"><span class="t">${p.period?.number>4?'OT'+(p.period.number-4):'Q'+(p.period?.number??'')} ${esc(p.clock?.displayValue||'')}</span><span class="x" style="flex:1">${p.team?.id&&abbr[p.team.id]?`<small style="color:var(--acc)">[${esc(abbr[p.team.id])}]</small> `:''}${esc(p.text)}</span><span class="sc">${p.awayScore}-${p.homeScore}</span></li>`).join('')}</ul>`:'<div class="empty">尚無逐球紀錄</div>'}`
       :(d.boxscore?.players||[]).map(boxTable).join('')||'<div class="empty">尚無球員數據</div>';
     const scrollY=window.scrollY;
@@ -163,6 +170,9 @@ async function renderGame(first){
 
 function shift(n){const d=new Date((dateStr||new Date().toISOString().slice(0,10))+'T12:00:00');d.setDate(d.getDate()+n);setDate(d.toISOString().slice(0,10))}
 function setDate(v){if(!v)return;dateStr=v;$('#date').value=v;view={type:'list'};history.replaceState(null,'',location.pathname);renderList(true)}
+function applyTheme(d){document.documentElement.dataset.theme=d?'dark':'';document.querySelector('meta[name=theme-color]').content=d?'#16140f':'#f4efe4';try{localStorage.theme=d?'dark':'light'}catch(e){}}
+$('#theme').onclick=()=>applyTheme(document.documentElement.dataset.theme!=='dark');
+applyTheme(document.documentElement.dataset.theme==='dark');
 $('#date').onchange=e=>setDate(e.target.value);
 $('#prev').onclick=()=>shift(-1);
 $('#next').onclick=()=>shift(1);
