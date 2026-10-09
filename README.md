@@ -32,10 +32,22 @@ python3 -m http.server 8765
 
 開啟 http://localhost:8765/ 。PWA 安裝需要 HTTPS 或 localhost。
 
+## 測試
+
+翻譯規則（`zh.js`）有自動測試，使用 Node 內建的測試工具，不需要安裝任何套件（需要 Node 18 以上）：
+
+```bash
+npm test
+```
+
+- `tests/zh.test.js`：各類規則的案例（投籃、罰球、籃板、失誤、犯規、換人、暫停、回放檢視等）、30 隊中文名稱、翻不到時維持原文
+- `tests/fixtures/plays.json`：從兩場真實比賽收集的 650 筆不重複逐球文字，用來確認幾乎每一筆都能翻成中文；之後遇到新的句型，把它加進來就能防止回歸
+
 ## 檔案
 
 - `index.html`：全部的介面與邏輯
 - `zh.js`：逐球文字翻譯
+- `tests/`：翻譯規則的自動測試
 - `features.js`：圖表、排名、球員小卡、重播
 - `sw.js`：Service Worker
 - `manifest.webmanifest`、`icons/`：PWA 設定與圖示

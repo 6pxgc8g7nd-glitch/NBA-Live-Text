@@ -58,8 +58,8 @@ function zhPlay(raw){
   if(m=t.match(/^(.+?) (traveling|double dribble|palming|discontinue dribble)(?: turnover)?$/i)){
     const k={traveling:'走步違例','double dribble':'二次運球違例',palming:'翻腕違例','discontinue dribble':'停運後再運球違例'};return `${m[1]} ${k[m[2].toLowerCase()]}`;}
   if(m=t.match(/^(.+?) turnover(?: \((.+?) steals\))?$/))return `${m[1]} 失誤${m[2]?`(${m[2]} 抄截)`:''}`;
-  const foul={'shooting foul':'投籃犯規','personal foul':'個人犯規','loose ball foul':'爭球犯規','offensive foul':'進攻犯規','offensive charge':'帶球撞人(進攻犯規)','technical foul':'技術犯規','flagrant foul type 1':'一級惡意犯規','flagrant foul type 2':'二級惡意犯規','personal take foul':'戰術犯規','transition take foul':'快攻戰術犯規','away from play foul':'無球犯規','defensive 3-seconds':'防守三秒違例','defensive 3 seconds':'防守三秒違例','kicked ball violation':'踢球違例','lane violation':'罰球線違例','goaltending':'干擾球','inbound foul':'發球犯規','punching foul':'揮拳犯規','clear path foul':'破壞快攻犯規'};
-  if(m=t.match(/^(.+?) (shooting foul|personal foul|loose ball foul|offensive foul|offensive charge|technical foul|flagrant foul type [12]|personal take foul|transition take foul|away from play foul|defensive 3[- ]seconds|kicked ball violation|lane violation|goaltending|inbound foul|clear path foul)$/i))return `${m[1]} ${foul[m[2].toLowerCase()]}`;
+  const foul={'shooting foul':'投籃犯規','personal foul':'個人犯規','loose ball foul':'爭球犯規','offensive foul':'進攻犯規','offensive charge':'帶球撞人(進攻犯規)','technical foul':'技術犯規','flagrant foul type 1':'一級惡意犯規','flagrant foul type 2':'二級惡意犯規','personal take foul':'戰術犯規','transition take foul':'快攻戰術犯規','away from play foul':'無球犯規','defensive 3-seconds':'防守三秒違例','defensive 3 seconds':'防守三秒違例','kicked ball violation':'踢球違例','lane violation':'罰球線違例','goaltending':'干擾球','defensive goaltending violation':'防守干擾球違例','offensive goaltending violation':'進攻干擾球違例','inbound foul':'發球犯規','punching foul':'揮拳犯規','clear path foul':'破壞快攻犯規'};
+  if(m=t.match(/^(.+?) (shooting foul|personal foul|loose ball foul|offensive foul|offensive charge|technical foul|flagrant foul type [12]|personal take foul|transition take foul|away from play foul|defensive 3[- ]seconds|kicked ball violation|lane violation|(?:defensive|offensive) goaltending violation|goaltending|inbound foul|clear path foul)$/i))return `${m[1]} ${foul[m[2].toLowerCase()]}`;
   if(/^delay of game violation$/i.test(t))return '延誤比賽違例';
   if(m=t.match(/^(.+?) (Full|20 Sec\.?|Short|Official|No) timeout$/i)){
     const k=/^full/i.test(m[2])?'暫停':/^20/.test(m[2])?'20 秒暫停':/^short/i.test(m[2])?'短暫停':/^official/i.test(m[2])?'官方暫停':'暫停';
@@ -69,7 +69,7 @@ function zhPlay(raw){
       .replace(/REF-INITIATED REVIEW/i,'裁判發起回放檢視').replace(/COACH'S CHALLENGE/i,'教練挑戰')
       .replace(/\(REPLAY SUPPORTS CALL\)/i,'(回放支持原判)').replace(/\(REPLAY OVERTURNS CALL\)|\(CALL OVERTURNED\)/i,'(推翻原判)')
       .replace(/\(CALL STANDS\)/i,'(維持原判)').replace(/\(NO CHANGE\)/i,'(維持原判)')
-      .replace(/charged with a timeout/i,'被記一次暫停').replace(/\(REPLAY SUPPORTS CALL\)/i,'(回放支持原判)')
+      .replace(/charged with a timeout/i,'被記一次暫停').replace(/retain their timeout/i,'保留暫停').replace(/\(REPLAY SUPPORTS CALL\)/i,'(回放支持原判)')
       .replace(/\s+/g,' ').trim();
   }
   return raw;

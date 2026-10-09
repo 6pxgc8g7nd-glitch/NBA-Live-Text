@@ -1,0 +1,2602 @@
+[
+ {
+  "type": "8-Second Turnover",
+  "text": "8 second turnover"
+ },
+ {
+  "type": "Alley Oop Layup Shot",
+  "text": "Ariel Hukporti blocks Luke Kornet 's 4-foot alley oop layup"
+ },
+ {
+  "type": "Alley Oop Layup Shot",
+  "text": "Victor Wembanyama misses alley oop layup"
+ },
+ {
+  "type": "Bad Pass\nTurnover",
+  "text": "Alperen Sengun bad pass\nturnover (Cooper Flagg steals)"
+ },
+ {
+  "type": "Bad Pass\nTurnover",
+  "text": "Amen Thompson bad pass\nturnover (Max Christie steals)"
+ },
+ {
+  "type": "Bad Pass\nTurnover",
+  "text": "Amen Thompson bad pass\nturnover (Morez Johnson Jr. steals)"
+ },
+ {
+  "type": "Bad Pass\nTurnover",
+  "text": "Jett Howard bad pass\nturnover (Alperen Sengun steals)"
+ },
+ {
+  "type": "Bad Pass\nTurnover",
+  "text": "Julian Champagnie bad pass\nturnover (OG Anunoby steals)"
+ },
+ {
+  "type": "Bad Pass\nTurnover",
+  "text": "Karl-Anthony Towns bad pass\nturnover (De'Aaron Fox steals)"
+ },
+ {
+  "type": "Bad Pass\nTurnover",
+  "text": "Karl-Anthony Towns bad pass\nturnover (Devin Vassell steals)"
+ },
+ {
+  "type": "Bad Pass\nTurnover",
+  "text": "Naji Marshall bad pass\nturnover (Amen Thompson steals)"
+ },
+ {
+  "type": "Bad Pass\nTurnover",
+  "text": "OG Anunoby bad pass\nturnover (Devin Vassell steals)"
+ },
+ {
+  "type": "Bad Pass\nTurnover",
+  "text": "Sergio de Larrea bad pass\nturnover (Fred VanVleet steals)"
+ },
+ {
+  "type": "Bad Pass\nTurnover",
+  "text": "Sergio de Larrea bad pass\nturnover (Steven Adams steals)"
+ },
+ {
+  "type": "Bad Pass\nTurnover",
+  "text": "Seth Lundy bad pass\nturnover (Tari Eason steals)"
+ },
+ {
+  "type": "Bad Pass\nTurnover",
+  "text": "Stephon Castle bad pass\nturnover (OG Anunoby steals)"
+ },
+ {
+  "type": "Bad Pass\nTurnover",
+  "text": "Steven Adams bad pass\nturnover (Daniel Gafford steals)"
+ },
+ {
+  "type": "Bad Pass\nTurnover",
+  "text": "Victor Wembanyama bad pass\nturnover (Jalen Brunson steals)"
+ },
+ {
+  "type": "Coach's Challenge (Overturned)",
+  "text": "(05:31) [Spurs] COACH'S CHALLENGE (CALL OVERTURNED) [Spurs] retain their timeout"
+ },
+ {
+  "type": "Coach's Challenge (Overturned)",
+  "text": "(08:19) [Spurs] COACH'S CHALLENGE (CALL OVERTURNED) [Spurs] retain their timeout"
+ },
+ {
+  "type": "Coach's Challenge (Stands)",
+  "text": "(08:51) [Knicks] COACH'S CHALLENGE (CALL STANDS) [Knicks] charged with a timeout"
+ },
+ {
+  "type": "Coach's Challenge (Stands)",
+  "text": "(09:29) [Rockets] COACH'S CHALLENGE (CALL STANDS) [Rockets] charged with a timeout"
+ },
+ {
+  "type": "Cutting Dunk Shot",
+  "text": "OG Anunoby makes dunk (Josh Hart assists)"
+ },
+ {
+  "type": "Cutting Finger Roll Layup Shot",
+  "text": "Daniel Gafford makes layup (Sergio de Larrea assists)"
+ },
+ {
+  "type": "Cutting Layup Shot",
+  "text": "Alperen Sengun makes 2-foot layup (Kevin Durant assists)"
+ },
+ {
+  "type": "Cutting Layup Shot",
+  "text": "Naji Marshall makes 2-foot layup (Cooper Flagg assists)"
+ },
+ {
+  "type": "Cutting Layup Shot",
+  "text": "Victor Wembanyama blocks Landry Shamet 's 2-foot layup"
+ },
+ {
+  "type": "Defensive Goaltending",
+  "text": "Devin Vassell defensive goaltending violation"
+ },
+ {
+  "type": "Defensive Goaltending",
+  "text": "Mitchell Robinson defensive goaltending violation"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Alperen Sengun defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Amen Thompson defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Bogdan Bogdanovic defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Carter Bryant defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Cooper Flagg defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Daniel Gafford defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Devin Vassell defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Dylan Harper defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Fred VanVleet defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Jabari Smith Jr. defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Jalen Brunson defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Jett Howard defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Jose Alvarado defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Josh Hart defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Julian Champagnie defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Karl-Anthony Towns defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Keldon Johnson defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Knicks defensive team rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Landry Shamet defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Luke Kornet defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Mavericks defensive team rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Max Christie defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Mikal Bridges defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Mitchell Robinson defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Morez Johnson Jr. defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Moussa Cisse defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Naji Marshall defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "OG Anunoby defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Reed Sheppard defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Rockets defensive team rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Sergio de Larrea defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Seth Lundy defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Spurs defensive team rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Stephon Castle defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Steven Adams defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Tari Eason defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Tarik Biberovic defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Victor Wembanyama defensive rebound"
+ },
+ {
+  "type": "Defensive Rebound",
+  "text": "Zaccharie Risacher defensive rebound"
+ },
+ {
+  "type": "Delay of Game",
+  "text": "delay of game violation"
+ },
+ {
+  "type": "Driving Dunk Shot",
+  "text": "Cooper Flagg makes 1-foot driving dunk"
+ },
+ {
+  "type": "Driving Dunk Shot",
+  "text": "Victor Wembanyama blocks OG Anunoby's driving dunk"
+ },
+ {
+  "type": "Driving Dunk Shot",
+  "text": "Victor Wembanyama makes 1-foot driving dunk (Devin Vassell assists)"
+ },
+ {
+  "type": "Driving Finger Roll Layup",
+  "text": "Alperen Sengun makes 2-foot two point shot (Fred VanVleet assists)"
+ },
+ {
+  "type": "Driving Finger Roll Layup",
+  "text": "Dylan Harper makes 1-foot two point shot"
+ },
+ {
+  "type": "Driving Finger Roll Layup",
+  "text": "Dylan Harper makes 1-foot two point shot (Julian Champagnie assists)"
+ },
+ {
+  "type": "Driving Finger Roll Layup",
+  "text": "Dylan Harper misses two point shot"
+ },
+ {
+  "type": "Driving Finger Roll Layup",
+  "text": "Jabari Smith Jr. makes 3-foot two point shot (Alperen Sengun assists)"
+ },
+ {
+  "type": "Driving Finger Roll Layup",
+  "text": "Jalen Brunson makes 1-foot two point shot"
+ },
+ {
+  "type": "Driving Finger Roll Layup",
+  "text": "Jalen Brunson makes 3-foot two point shot (Josh Hart assists)"
+ },
+ {
+  "type": "Driving Finger Roll Layup",
+  "text": "Jose Alvarado misses two point shot"
+ },
+ {
+  "type": "Driving Finger Roll Layup",
+  "text": "Josh Hart misses two point shot"
+ },
+ {
+  "type": "Driving Finger Roll Layup",
+  "text": "Kevin Durant makes 7-foot two point shot (Fred VanVleet assists)"
+ },
+ {
+  "type": "Driving Finger Roll Layup",
+  "text": "Zaccharie Risacher makes 2-foot two point shot (Moussa Cisse assists)"
+ },
+ {
+  "type": "Driving Finger Roll Layup",
+  "text": "Zaccharie Risacher misses two point shot"
+ },
+ {
+  "type": "Driving Floating Bank Jump Shot",
+  "text": "Cooper Flagg misses two point shot"
+ },
+ {
+  "type": "Driving Floating Bank Jump Shot",
+  "text": "Kevin Durant makes 8-foot two point shot (Alperen Sengun assists)"
+ },
+ {
+  "type": "Driving Floating Bank Jump Shot",
+  "text": "Stephon Castle misses two point shot"
+ },
+ {
+  "type": "Driving Floating Jump Shot",
+  "text": "Amen Thompson makes 8-foot driving floating jump shot (Tari Eason assists)"
+ },
+ {
+  "type": "Driving Floating Jump Shot",
+  "text": "Bogdan Bogdanovic makes 11-foot driving floating jump shot (Kevin Durant assists)"
+ },
+ {
+  "type": "Driving Floating Jump Shot",
+  "text": "Cooper Flagg misses driving floating jump shot"
+ },
+ {
+  "type": "Driving Floating Jump Shot",
+  "text": "De'Aaron Fox makes 7-foot driving floating jump shot"
+ },
+ {
+  "type": "Driving Floating Jump Shot",
+  "text": "Dylan Harper blocks Jordan Clarkson 's 11-foot driving floating jump shot"
+ },
+ {
+  "type": "Driving Floating Jump Shot",
+  "text": "Fred VanVleet misses driving floating jump shot"
+ },
+ {
+  "type": "Driving Floating Jump Shot",
+  "text": "Isaiah Crawford misses driving floating jump shot"
+ },
+ {
+  "type": "Driving Floating Jump Shot",
+  "text": "Jalen Brunson makes 11-foot driving floating jump shot"
+ },
+ {
+  "type": "Driving Floating Jump Shot",
+  "text": "Jalen Brunson misses driving floating jump shot"
+ },
+ {
+  "type": "Driving Floating Jump Shot",
+  "text": "Jordan Clarkson makes 10-foot driving floating jump shot (Jalen Brunson assists)"
+ },
+ {
+  "type": "Driving Floating Jump Shot",
+  "text": "Jose Alvarado misses driving floating jump shot"
+ },
+ {
+  "type": "Driving Floating Jump Shot",
+  "text": "Karl-Anthony Towns misses driving floating jump shot"
+ },
+ {
+  "type": "Driving Floating Jump Shot",
+  "text": "Keldon Johnson misses driving floating jump shot"
+ },
+ {
+  "type": "Driving Floating Jump Shot",
+  "text": "Kevin Durant misses driving floating jump shot"
+ },
+ {
+  "type": "Driving Floating Jump Shot",
+  "text": "Mikal Bridges makes 4-foot driving floating jump shot (Mitchell Robinson assists)"
+ },
+ {
+  "type": "Driving Floating Jump Shot",
+  "text": "Mikal Bridges makes 6-foot driving floating jump shot"
+ },
+ {
+  "type": "Driving Floating Jump Shot",
+  "text": "Naji Marshall makes 12-foot driving floating jump shot (Dwight Powell assists)"
+ },
+ {
+  "type": "Driving Floating Jump Shot",
+  "text": "Naji Marshall misses driving floating jump shot"
+ },
+ {
+  "type": "Driving Floating Jump Shot",
+  "text": "Stephon Castle misses driving floating jump shot"
+ },
+ {
+  "type": "Driving Floating Jump Shot",
+  "text": "Tari Eason makes 10-foot driving floating jump shot (Amen Thompson assists)"
+ },
+ {
+  "type": "Driving Floating Jump Shot",
+  "text": "Victor Wembanyama blocks Karl-Anthony Towns 's 1-foot driving floating jump shot"
+ },
+ {
+  "type": "Driving Floating Jump Shot",
+  "text": "Victor Wembanyama misses driving floating jump shot"
+ },
+ {
+  "type": "Driving Hook Shot",
+  "text": "Alperen Sengun misses 3-foot two point shot"
+ },
+ {
+  "type": "Driving Layup Shot",
+  "text": "Alperen Sengun makes driving layup (Amen Thompson assists)"
+ },
+ {
+  "type": "Driving Layup Shot",
+  "text": "Alperen Sengun makes driving layup (Fred VanVleet assists)"
+ },
+ {
+  "type": "Driving Layup Shot",
+  "text": "Amen Thompson blocks Daniel Gafford 's 5-foot driving layup"
+ },
+ {
+  "type": "Driving Layup Shot",
+  "text": "Amen Thompson misses driving layup"
+ },
+ {
+  "type": "Driving Layup Shot",
+  "text": "Cooper Flagg blocks Amen Thompson 's 11-foot driving layup"
+ },
+ {
+  "type": "Driving Layup Shot",
+  "text": "Dwight Powell blocks Tari Eason 's 4-foot driving layup"
+ },
+ {
+  "type": "Driving Layup Shot",
+  "text": "Dylan Harper misses driving layup"
+ },
+ {
+  "type": "Driving Layup Shot",
+  "text": "Jalen Brunson misses driving layup"
+ },
+ {
+  "type": "Driving Layup Shot",
+  "text": "Karl-Anthony Towns blocks Stephon Castle's driving layup"
+ },
+ {
+  "type": "Driving Layup Shot",
+  "text": "Karl-Anthony Towns misses driving layup"
+ },
+ {
+  "type": "Driving Layup Shot",
+  "text": "Landry Shamet makes driving layup"
+ },
+ {
+  "type": "Driving Layup Shot",
+  "text": "Moussa Cisse misses driving layup"
+ },
+ {
+  "type": "Driving Layup Shot",
+  "text": "Naji Marshall makes driving layup"
+ },
+ {
+  "type": "Driving Layup Shot",
+  "text": "OG Anunoby misses driving layup"
+ },
+ {
+  "type": "Driving Layup Shot",
+  "text": "Stephon Castle misses driving layup"
+ },
+ {
+  "type": "Driving Layup Shot",
+  "text": "Tari Eason makes driving layup"
+ },
+ {
+  "type": "Driving Layup Shot",
+  "text": "Victor Wembanyama blocks Karl-Anthony Towns 's 5-foot driving layup"
+ },
+ {
+  "type": "Driving Layup Shot",
+  "text": "Zaccharie Risacher makes driving layup"
+ },
+ {
+  "type": "End Game",
+  "text": "End of Game"
+ },
+ {
+  "type": "End Period",
+  "text": "End of the 1st Quarter"
+ },
+ {
+  "type": "End Period",
+  "text": "End of the 2nd Quarter"
+ },
+ {
+  "type": "End Period",
+  "text": "End of the 3rd Quarter"
+ },
+ {
+  "type": "End Period",
+  "text": "End of the 4th Quarter"
+ },
+ {
+  "type": "Fade Away Bank Jump Shot",
+  "text": "Tari Eason misses 10-foot two point shot"
+ },
+ {
+  "type": "Fade Away Jump Shot",
+  "text": "Amen Thompson misses 13-foot fade away jump shot"
+ },
+ {
+  "type": "Fade Away Jump Shot",
+  "text": "Jabari Smith Jr. misses 10-foot fade away jump shot"
+ },
+ {
+  "type": "Fade Away Jump Shot",
+  "text": "Jalen Brunson misses 9-foot fade away jump shot"
+ },
+ {
+  "type": "Fade Away Jump Shot",
+  "text": "Kevin Durant misses 12-foot fade away jump shot"
+ },
+ {
+  "type": "Fade Away Jump Shot",
+  "text": "Naji Marshall makes 12-foot fade away jump shot"
+ },
+ {
+  "type": "Fade Away Jump Shot",
+  "text": "OG Anunoby blocks Stephon Castle's fade away jump shot"
+ },
+ {
+  "type": "Fade Away Jump Shot",
+  "text": "Tari Eason makes 9-foot fade away jump shot"
+ },
+ {
+  "type": "Fade Away Jump Shot",
+  "text": "Victor Wembanyama misses 16-foot fade away jump shot"
+ },
+ {
+  "type": "Fade Away Jump Shot",
+  "text": "Zaccharie Risacher misses 7-foot fade away jump shot"
+ },
+ {
+  "type": "Flagrant Foul Type 1",
+  "text": "De'Aaron Fox flagrant foul type 1"
+ },
+ {
+  "type": "Flagrant Foul Type 1",
+  "text": "Mitchell Robinson flagrant foul type 1"
+ },
+ {
+  "type": "Floating Jump Shot",
+  "text": "Steven Adams makes 8-foot floating jump shot (Tari Eason assists)"
+ },
+ {
+  "type": "Free Throw - 1 of 1",
+  "text": "Alperen Sengun makes free throw 1 of 1"
+ },
+ {
+  "type": "Free Throw - 1 of 1",
+  "text": "Kevin Durant misses free throw 1 of 1"
+ },
+ {
+  "type": "Free Throw - 1 of 2",
+  "text": "Alperen Sengun makes free throw 1 of 2"
+ },
+ {
+  "type": "Free Throw - 1 of 2",
+  "text": "Cooper Flagg makes free throw 1 of 2"
+ },
+ {
+  "type": "Free Throw - 1 of 2",
+  "text": "Dylan Harper makes free throw 1 of 2"
+ },
+ {
+  "type": "Free Throw - 1 of 2",
+  "text": "Dylan Harper misses free throw 1 of 2"
+ },
+ {
+  "type": "Free Throw - 1 of 2",
+  "text": "Jabari Smith Jr. makes free throw 1 of 2"
+ },
+ {
+  "type": "Free Throw - 1 of 2",
+  "text": "Jabari Smith Jr. misses free throw 1 of 2"
+ },
+ {
+  "type": "Free Throw - 1 of 2",
+  "text": "Jalen Brunson makes free throw 1 of 2"
+ },
+ {
+  "type": "Free Throw - 1 of 2",
+  "text": "Jalen Brunson misses free throw 1 of 2"
+ },
+ {
+  "type": "Free Throw - 1 of 2",
+  "text": "Josh Hart makes free throw 1 of 2"
+ },
+ {
+  "type": "Free Throw - 1 of 2",
+  "text": "Keldon Johnson makes free throw 1 of 2"
+ },
+ {
+  "type": "Free Throw - 1 of 2",
+  "text": "Mikal Bridges misses free throw 1 of 2"
+ },
+ {
+  "type": "Free Throw - 1 of 2",
+  "text": "Mitchell Robinson misses free throw 1 of 2"
+ },
+ {
+  "type": "Free Throw - 1 of 2",
+  "text": "Morez Johnson Jr. misses free throw 1 of 2"
+ },
+ {
+  "type": "Free Throw - 1 of 2",
+  "text": "Naji Marshall misses free throw 1 of 2"
+ },
+ {
+  "type": "Free Throw - 1 of 2",
+  "text": "OG Anunoby makes free throw 1 of 2"
+ },
+ {
+  "type": "Free Throw - 1 of 2",
+  "text": "OG Anunoby misses free throw 1 of 2"
+ },
+ {
+  "type": "Free Throw - 1 of 2",
+  "text": "Stephon Castle makes free throw 1 of 2"
+ },
+ {
+  "type": "Free Throw - 1 of 2",
+  "text": "Stephon Castle misses free throw 1 of 2"
+ },
+ {
+  "type": "Free Throw - 1 of 2",
+  "text": "Tari Eason makes free throw 1 of 2"
+ },
+ {
+  "type": "Free Throw - 1 of 2",
+  "text": "Tobi Lawal makes free throw 1 of 2"
+ },
+ {
+  "type": "Free Throw - 1 of 2",
+  "text": "Victor Wembanyama makes free throw 1 of 2"
+ },
+ {
+  "type": "Free Throw - 1 of 2",
+  "text": "Victor Wembanyama misses free throw 1 of 2"
+ },
+ {
+  "type": "Free Throw - 1 of 3",
+  "text": "Fred VanVleet makes free throw 1 of 3"
+ },
+ {
+  "type": "Free Throw - 1 of 3",
+  "text": "Jalen Brunson makes free throw 1 of 3"
+ },
+ {
+  "type": "Free Throw - 1 of 3",
+  "text": "Jalen Brunson misses free throw 1 of 3"
+ },
+ {
+  "type": "Free Throw - 2 of 2",
+  "text": "Alperen Sengun makes free throw 2 of 2"
+ },
+ {
+  "type": "Free Throw - 2 of 2",
+  "text": "Alperen Sengun misses free throw 2 of 2"
+ },
+ {
+  "type": "Free Throw - 2 of 2",
+  "text": "Cooper Flagg makes free throw 2 of 2"
+ },
+ {
+  "type": "Free Throw - 2 of 2",
+  "text": "Dylan Harper makes free throw 2 of 2"
+ },
+ {
+  "type": "Free Throw - 2 of 2",
+  "text": "Dylan Harper misses free throw 2 of 2"
+ },
+ {
+  "type": "Free Throw - 2 of 2",
+  "text": "Jabari Smith Jr. makes free throw 2 of 2"
+ },
+ {
+  "type": "Free Throw - 2 of 2",
+  "text": "Jabari Smith Jr. misses free throw 2 of 2"
+ },
+ {
+  "type": "Free Throw - 2 of 2",
+  "text": "Jalen Brunson makes free throw 2 of 2"
+ },
+ {
+  "type": "Free Throw - 2 of 2",
+  "text": "Josh Hart misses free throw 2 of 2"
+ },
+ {
+  "type": "Free Throw - 2 of 2",
+  "text": "Keldon Johnson misses free throw 2 of 2"
+ },
+ {
+  "type": "Free Throw - 2 of 2",
+  "text": "Mikal Bridges makes free throw 2 of 2"
+ },
+ {
+  "type": "Free Throw - 2 of 2",
+  "text": "Mitchell Robinson misses free throw 2 of 2"
+ },
+ {
+  "type": "Free Throw - 2 of 2",
+  "text": "Morez Johnson Jr. makes free throw 2 of 2"
+ },
+ {
+  "type": "Free Throw - 2 of 2",
+  "text": "Naji Marshall makes free throw 2 of 2"
+ },
+ {
+  "type": "Free Throw - 2 of 2",
+  "text": "OG Anunoby makes free throw 2 of 2"
+ },
+ {
+  "type": "Free Throw - 2 of 2",
+  "text": "OG Anunoby misses free throw 2 of 2"
+ },
+ {
+  "type": "Free Throw - 2 of 2",
+  "text": "Stephon Castle makes free throw 2 of 2"
+ },
+ {
+  "type": "Free Throw - 2 of 2",
+  "text": "Tari Eason makes free throw 2 of 2"
+ },
+ {
+  "type": "Free Throw - 2 of 2",
+  "text": "Tari Eason misses free throw 2 of 2"
+ },
+ {
+  "type": "Free Throw - 2 of 2",
+  "text": "Tobi Lawal makes free throw 2 of 2"
+ },
+ {
+  "type": "Free Throw - 2 of 2",
+  "text": "Victor Wembanyama makes free throw 2 of 2"
+ },
+ {
+  "type": "Free Throw - 2 of 3",
+  "text": "Fred VanVleet makes free throw 2 of 3"
+ },
+ {
+  "type": "Free Throw - 2 of 3",
+  "text": "Jalen Brunson makes free throw 2 of 3"
+ },
+ {
+  "type": "Free Throw - 3 of 3",
+  "text": "Fred VanVleet misses free throw 3 of 3"
+ },
+ {
+  "type": "Free Throw - 3 of 3",
+  "text": "Jalen Brunson makes free throw 3 of 3"
+ },
+ {
+  "type": "Free Throw - Flagrant 1 of 1",
+  "text": "Josh Hart makes free throw flagrant 1 of 1"
+ },
+ {
+  "type": "Free Throw - Flagrant 1 of 1",
+  "text": "Victor Wembanyama makes free throw flagrant 1 of 1"
+ },
+ {
+  "type": "Full Timeout",
+  "text": "Knicks Full timeout"
+ },
+ {
+  "type": "Full Timeout",
+  "text": "Mavericks Full timeout"
+ },
+ {
+  "type": "Full Timeout",
+  "text": "Rockets Full timeout"
+ },
+ {
+  "type": "Full Timeout",
+  "text": "Spurs Full timeout"
+ },
+ {
+  "type": "Heave Jump Shot",
+  "text": "Victor Wembanyama misses heave jump shot"
+ },
+ {
+  "type": "Hook Driving Bank",
+  "text": "Victor Wembanyama misses 2-foot two point shot"
+ },
+ {
+  "type": "Hook Shot",
+  "text": "Victor Wembanyama misses 3-foot hook shot"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Alperen Sengun misses 25-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Alperen Sengun misses 26-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Bogdan Bogdanovic misses 25-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Cooper Flagg makes 26-foot three point jumper (Dwight Powell assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Cooper Flagg misses 23-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Cooper Flagg misses 24-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Daniel Gafford makes 25-foot three point jumper (Sergio de Larrea assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "De'Aaron Fox makes 24-foot three point jumper (Victor Wembanyama assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "De'Aaron Fox misses 23-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "De'Aaron Fox misses 25-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "De'Aaron Fox misses 26-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Devin Vassell makes 25-foot three point jumper (Dylan Harper assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Devin Vassell makes 26-foot three point jumper (Stephon Castle assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Devin Vassell misses 23-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Devin Vassell misses 25-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Dwight Powell misses 23-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Dylan Harper makes 25-foot three point jumper (Victor Wembanyama assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Dylan Harper makes 26-foot three point jumper (De'Aaron Fox assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Dylan Harper misses 23-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Dylan Harper misses 25-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Fred VanVleet makes 23-foot three point jumper (Jabari Smith Jr. assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Fred VanVleet misses 23-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Fred VanVleet misses 25-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Fred VanVleet misses 27-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Isaiah Crawford makes 26-foot three point jumper (Bogdan Bogdanovic assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Jabari Smith Jr. makes 24-foot three point jumper (Fred VanVleet assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Jabari Smith Jr. makes 25-foot three point jumper (Alperen Sengun assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Jalen Brunson makes 20-foot jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Jalen Brunson makes 26-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Jalen Brunson misses 26-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Jett Howard misses 25-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Jordan Clarkson misses 26-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Jose Alvarado misses 29-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Josh Hart makes 25-foot three point jumper (Mikal Bridges assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Josh Hart misses 23-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Josh Hart misses 26-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Julian Champagnie makes 23-foot three point jumper (Stephon Castle assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Julian Champagnie makes 24-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Julian Champagnie makes 25-foot three point jumper (De'Aaron Fox assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Julian Champagnie misses 23-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Julian Champagnie misses 26-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Karl-Anthony Towns misses 26-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Keldon Johnson makes 22-foot three point jumper (Dylan Harper assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Keldon Johnson makes 24-foot three point jumper (Stephon Castle assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Keldon Johnson misses 25-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Kevin Durant blocks Tarik Biberovic 's 25-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Kevin Durant makes 14-foot jumper (Alperen Sengun assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Kevin Durant makes 25-foot three point jumper (Alperen Sengun assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Kevin Durant misses 16-foot jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Landry Shamet makes 25-foot three point jumper (Mikal Bridges assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Landry Shamet misses 23-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Landry Shamet misses 27-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Max Christie makes 24-foot three point jumper (Dwight Powell assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Max Christie makes 26-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Max Christie makes 26-foot three point jumper (Cooper Flagg assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Max Christie makes 27-foot three point jumper (Naji Marshall assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Max Christie misses 23-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Max Christie misses 24-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Max Christie misses 25-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Mikal Bridges makes 23-foot three point jumper (Miles McBride assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Mikal Bridges makes 25-foot three point jumper (Jalen Brunson assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Mikal Bridges makes 26-foot three point jumper (Jalen Brunson assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Mikal Bridges misses 23-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Mikal Bridges misses 26-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Miles McBride misses 23-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Morez Johnson Jr. makes 25-foot three point jumper (Sergio de Larrea assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Morez Johnson Jr. misses 24-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Naji Marshall makes 24-foot three point jumper (Jett Howard assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Naji Marshall misses 23-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Naji Marshall misses 24-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Naji Marshall misses 25-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "OG Anunoby makes 22-foot three point jumper (Karl-Anthony Towns assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "OG Anunoby misses 24-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Reed Sheppard makes 23-foot three point jumper (Bogdan Bogdanovic assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Reed Sheppard makes 26-foot three point jumper (Fred VanVleet assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Reed Sheppard misses 28-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Sergio de Larrea makes 24-foot three point jumper (John Poulakidas assists)"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Seth Lundy misses 24-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Seth Lundy misses 25-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Stephon Castle misses 22-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Stephon Castle misses 26-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Stephon Castle misses 27-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Tarik Biberovic misses 24-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Tarik Biberovic misses 25-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Victor Wembanyama blocks Jose Alvarado 's 22-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Victor Wembanyama makes 25-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Victor Wembanyama misses 15-foot jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Victor Wembanyama misses 25-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Victor Wembanyama misses 26-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot",
+  "text": "Zaccharie Risacher misses 25-foot three point jumper"
+ },
+ {
+  "type": "Jump Shot Bank",
+  "text": "Miles McBride misses 27-foot jump bank shot"
+ },
+ {
+  "type": "Jumpball",
+  "text": "Alperen Sengun vs. Morez Johnson Jr. (Fred VanVleet gains possession)"
+ },
+ {
+  "type": "Jumpball",
+  "text": "Jalen Brunson vs. Dylan Harper (Mitchell Robinson gains possession)"
+ },
+ {
+  "type": "Jumpball",
+  "text": "Jalen Brunson vs. Stephon Castle (Stephon Castle gains possession)"
+ },
+ {
+  "type": "Jumpball",
+  "text": "Karl-Anthony Towns vs. Victor Wembanyama (OG Anunoby gains possession)"
+ },
+ {
+  "type": "Jumpball",
+  "text": "Mikal Bridges vs. Dylan Harper (Landry Shamet gains possession)"
+ },
+ {
+  "type": "Kicked Ball",
+  "text": "Kevin Durant kicked ball violation"
+ },
+ {
+  "type": "Kicked Ball",
+  "text": "Landry Shamet kicked ball violation"
+ },
+ {
+  "type": "Kicked Ball",
+  "text": "Luke Kornet kicked ball violation"
+ },
+ {
+  "type": "Kicked Ball",
+  "text": "Victor Wembanyama kicked ball violation"
+ },
+ {
+  "type": "Layup Driving Reverse",
+  "text": "Amen Thompson makes two point shot"
+ },
+ {
+  "type": "Layup Driving Reverse",
+  "text": "Dylan Harper makes two point shot"
+ },
+ {
+  "type": "Layup Shot",
+  "text": "Alperen Sengun makes layup"
+ },
+ {
+  "type": "Layup Shot",
+  "text": "Amen Thompson misses layup"
+ },
+ {
+  "type": "Layup Shot",
+  "text": "Victor Wembanyama makes layup (Dylan Harper assists)"
+ },
+ {
+  "type": "Layup Shot Putback",
+  "text": "Julian Champagnie makes two point shot"
+ },
+ {
+  "type": "Layup Shot Putback",
+  "text": "Zaccharie Risacher makes two point shot"
+ },
+ {
+  "type": "Loose Ball Foul",
+  "text": "Amen Thompson loose ball foul"
+ },
+ {
+  "type": "Loose Ball Foul",
+  "text": "Bogdan Bogdanovic loose ball foul"
+ },
+ {
+  "type": "Loose Ball Foul",
+  "text": "Isaiah Crawford loose ball foul"
+ },
+ {
+  "type": "Loose Ball Foul",
+  "text": "Josh Hart loose ball foul"
+ },
+ {
+  "type": "Loose Ball Foul",
+  "text": "Keldon Johnson loose ball foul"
+ },
+ {
+  "type": "Loose Ball Foul",
+  "text": "Mikal Bridges loose ball foul"
+ },
+ {
+  "type": "Loose Ball Foul",
+  "text": "Morez Johnson Jr. loose ball foul"
+ },
+ {
+  "type": "Loose Ball Foul",
+  "text": "OG Anunoby loose ball foul"
+ },
+ {
+  "type": "Loose Ball Foul",
+  "text": "Stephon Castle loose ball foul"
+ },
+ {
+  "type": "Loose Ball Foul",
+  "text": "Victor Wembanyama loose ball foul"
+ },
+ {
+  "type": "Lost Ball Turnover",
+  "text": "Carter Bryant lost ball turnover (Jalen Brunson steals)"
+ },
+ {
+  "type": "Lost Ball Turnover",
+  "text": "Cooper Flagg lost ball turnover (Jabari Smith Jr. steals)"
+ },
+ {
+  "type": "Lost Ball Turnover",
+  "text": "Jalen Brunson lost ball turnover (Julian Champagnie steals)"
+ },
+ {
+  "type": "Lost Ball Turnover",
+  "text": "Jalen Brunson lost ball turnover (Stephon Castle steals)"
+ },
+ {
+  "type": "Lost Ball Turnover",
+  "text": "Josh Hart lost ball turnover (De'Aaron Fox steals)"
+ },
+ {
+  "type": "Lost Ball Turnover",
+  "text": "Julian Champagnie lost ball turnover (Karl-Anthony Towns steals)"
+ },
+ {
+  "type": "Lost Ball Turnover",
+  "text": "Julian Champagnie lost ball turnover (OG Anunoby steals)"
+ },
+ {
+  "type": "Lost Ball Turnover",
+  "text": "Naji Marshall lost ball turnover (Fred VanVleet steals)"
+ },
+ {
+  "type": "Lost Ball Turnover",
+  "text": "Sergio de Larrea lost ball turnover (Reed Sheppard steals)"
+ },
+ {
+  "type": "Lost Ball Turnover",
+  "text": "Stephon Castle lost ball turnover (Karl-Anthony Towns steals)"
+ },
+ {
+  "type": "Lost Ball Turnover",
+  "text": "Victor Wembanyama lost ball turnover (Karl-Anthony Towns steals)"
+ },
+ {
+  "type": "Lost Ball Turnover",
+  "text": "Zaccharie Risacher lost ball turnover (Tari Eason steals)"
+ },
+ {
+  "type": "Offensive Charge",
+  "text": "Alperen Sengun offensive charge"
+ },
+ {
+  "type": "Offensive Foul",
+  "text": "Alperen Sengun offensive foul"
+ },
+ {
+  "type": "Offensive Foul",
+  "text": "Bogdan Bogdanovic offensive foul"
+ },
+ {
+  "type": "Offensive Foul",
+  "text": "Daniel Gafford offensive foul"
+ },
+ {
+  "type": "Offensive Foul",
+  "text": "Jalen Brunson offensive foul"
+ },
+ {
+  "type": "Offensive Foul",
+  "text": "Julian Champagnie offensive foul"
+ },
+ {
+  "type": "Offensive Foul",
+  "text": "Karl-Anthony Towns offensive foul"
+ },
+ {
+  "type": "Offensive Foul",
+  "text": "Stephon Castle offensive foul"
+ },
+ {
+  "type": "Offensive Foul Turnover",
+  "text": "Alperen Sengun offensive foul turnover"
+ },
+ {
+  "type": "Offensive Foul Turnover",
+  "text": "Bogdan Bogdanovic offensive foul turnover"
+ },
+ {
+  "type": "Offensive Foul Turnover",
+  "text": "Daniel Gafford offensive foul turnover"
+ },
+ {
+  "type": "Offensive Foul Turnover",
+  "text": "Jalen Brunson offensive foul turnover"
+ },
+ {
+  "type": "Offensive Foul Turnover",
+  "text": "Julian Champagnie offensive foul turnover"
+ },
+ {
+  "type": "Offensive Foul Turnover",
+  "text": "Karl-Anthony Towns offensive foul turnover"
+ },
+ {
+  "type": "Offensive Foul Turnover",
+  "text": "Stephon Castle offensive foul turnover"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Alperen Sengun offensive rebound"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Amen Thompson offensive rebound"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Ariel Hukporti offensive rebound"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Cooper Flagg offensive rebound"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Dylan Harper offensive rebound"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Jabari Smith Jr. offensive rebound"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Jalen Brunson offensive rebound"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Jordan Clarkson offensive rebound"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Josh Hart offensive rebound"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Julian Champagnie offensive rebound"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Karl-Anthony Towns offensive rebound"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Keldon Johnson offensive rebound"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Knicks offensive team rebound"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Luke Kornet offensive rebound"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Mavericks offensive team rebound"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Max Christie offensive rebound"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Mitchell Robinson offensive rebound"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Morez Johnson Jr. offensive rebound"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Naji Marshall offensive rebound"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Rockets offensive team rebound"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Spurs offensive team rebound"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Stephon Castle offensive rebound"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Steven Adams offensive rebound"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Tari Eason offensive rebound"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Tarik Biberovic offensive rebound"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Tobi Lawal offensive rebound"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Victor Wembanyama offensive rebound"
+ },
+ {
+  "type": "Offensive Rebound",
+  "text": "Zaccharie Risacher offensive rebound"
+ },
+ {
+  "type": "Out of Bounds - Bad Pass Turnover",
+  "text": "De'Aaron Fox out of bounds bad pass turnover"
+ },
+ {
+  "type": "Out of Bounds - Bad Pass Turnover",
+  "text": "Karl-Anthony Towns out of bounds bad pass turnover"
+ },
+ {
+  "type": "Out of Bounds - Bad Pass Turnover",
+  "text": "Luke Kornet out of bounds bad pass turnover"
+ },
+ {
+  "type": "Out of Bounds - Lost Ball Turnover",
+  "text": "Amen Thompson out of bounds lost ball turnover"
+ },
+ {
+  "type": "Out of Bounds - Lost Ball Turnover",
+  "text": "Fred VanVleet out of bounds lost ball turnover"
+ },
+ {
+  "type": "Out of Bounds - Lost Ball Turnover",
+  "text": "Karl-Anthony Towns out of bounds lost ball turnover"
+ },
+ {
+  "type": "Out of Bounds - Lost Ball Turnover",
+  "text": "Kevin Durant out of bounds lost ball turnover"
+ },
+ {
+  "type": "Out of Bounds - Step Turnover",
+  "text": "Cooper Flagg steps out of bounds turnover"
+ },
+ {
+  "type": "Personal Foul",
+  "text": "Alperen Sengun personal foul"
+ },
+ {
+  "type": "Personal Foul",
+  "text": "Amen Thompson personal foul"
+ },
+ {
+  "type": "Personal Foul",
+  "text": "Cooper Flagg personal foul"
+ },
+ {
+  "type": "Personal Foul",
+  "text": "Dylan Harper personal foul"
+ },
+ {
+  "type": "Personal Foul",
+  "text": "Fred VanVleet personal foul"
+ },
+ {
+  "type": "Personal Foul",
+  "text": "Isaiah Crawford personal foul"
+ },
+ {
+  "type": "Personal Foul",
+  "text": "Jose Alvarado personal foul"
+ },
+ {
+  "type": "Personal Foul",
+  "text": "Karl-Anthony Towns personal foul"
+ },
+ {
+  "type": "Personal Foul",
+  "text": "Keldon Johnson personal foul"
+ },
+ {
+  "type": "Personal Foul",
+  "text": "OG Anunoby personal foul"
+ },
+ {
+  "type": "Personal Foul",
+  "text": "Reed Sheppard personal foul"
+ },
+ {
+  "type": "Personal Foul",
+  "text": "Sergio de Larrea personal foul"
+ },
+ {
+  "type": "Personal Foul",
+  "text": "Seth Lundy personal foul"
+ },
+ {
+  "type": "Personal Foul",
+  "text": "Stephon Castle personal foul"
+ },
+ {
+  "type": "Personal Foul",
+  "text": "Tarik Biberovic personal foul"
+ },
+ {
+  "type": "Personal Take Foul",
+  "text": "De'Aaron Fox personal take foul"
+ },
+ {
+  "type": "Personal Take Foul",
+  "text": "Dylan Harper personal take foul"
+ },
+ {
+  "type": "Personal Take Foul",
+  "text": "Landry Shamet personal take foul"
+ },
+ {
+  "type": "Personal Take Foul",
+  "text": "Luke Kornet personal take foul"
+ },
+ {
+  "type": "Pullup Bank Jump Shot",
+  "text": "De'Aaron Fox misses 27-foot three point shot"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Cooper Flagg makes 13-foot pullup jump shot (Tarik Biberovic assists)"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Cooper Flagg makes 14-foot pullup jump shot (Morez Johnson Jr. assists)"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Cooper Flagg makes 15-foot pullup jump shot (Dwight Powell assists)"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Cooper Flagg misses 13-foot pullup jump shot"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "De'Aaron Fox makes 9-foot pullup jump shot"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "De'Aaron Fox misses 11-foot pullup jump shot"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "De'Aaron Fox misses 16-foot pullup jump shot"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "De'Aaron Fox misses 17-foot pullup jump shot"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "De'Aaron Fox misses 26-foot three point pullup jump shot"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Devin Vassell makes 12-foot pullup jump shot (De'Aaron Fox assists)"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Devin Vassell makes 16-foot pullup jump shot (Dylan Harper assists)"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Dylan Harper makes 14-foot pullup jump shot"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Dylan Harper misses 15-foot pullup jump shot"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Fred VanVleet makes 24-foot three pointer (Alperen Sengun assists)"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Fred VanVleet misses 24-foot three point pullup jump shot"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Fred VanVleet misses 29-foot three point pullup jump shot"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Jabari Smith Jr. misses 12-foot pullup jump shot"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Jabari Smith Jr. misses 9-foot pullup jump shot"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Jalen Brunson makes 10-foot pullup jump shot"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Jalen Brunson makes 12-foot pullup jump shot (Mitchell Robinson assists)"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Jalen Brunson makes 16-foot pullup jump shot"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Jalen Brunson makes 25-foot three pointer (Mikal Bridges assists)"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Jalen Brunson makes 26-foot three pointer"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Jalen Brunson makes 27-foot three pointer"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Jalen Brunson misses 26-foot three point pullup jump shot"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Jett Howard misses 19-foot pullup jump shot"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Josh Hart makes 26-foot three pointer (Ariel Hukporti assists)"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Kevin Durant makes 11-foot pullup jump shot"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Kevin Durant makes 12-foot pullup jump shot (Alperen Sengun assists)"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Kevin Durant makes 14-foot pullup jump shot (Fred VanVleet assists)"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Mikal Bridges misses 13-foot pullup jump shot"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Mikal Bridges misses 25-foot three point pullup jump shot"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Naji Marshall makes 10-foot pullup jump shot (Max Christie assists)"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Reed Sheppard makes 26-foot three pointer (Steven Adams assists)"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Reed Sheppard misses 26-foot three point pullup jump shot"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Sergio de Larrea misses 17-foot pullup jump shot"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Stephon Castle misses 13-foot pullup jump shot"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Tari Eason makes 25-foot three pointer"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Tari Eason misses 11-foot pullup jump shot"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Tarik Biberovic makes 24-foot three pointer (Dwight Powell assists)"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Tarik Biberovic misses 14-foot pullup jump shot"
+ },
+ {
+  "type": "Pullup Jump Shot",
+  "text": "Zaccharie Risacher makes 25-foot three pointer (Dwight Powell assists)"
+ },
+ {
+  "type": "Ref-Initiated Review (Overturned)",
+  "text": "(01:18) [Knicks] REF-INITIATED REVIEW (CALL OVERTURNED)"
+ },
+ {
+  "type": "Ref-Initiated Review (Overturned)",
+  "text": "(09:42) [Knicks] REF-INITIATED REVIEW (CALL OVERTURNED)"
+ },
+ {
+  "type": "Ref-Initiated Review (Supported)",
+  "text": "(00:00) [Knicks] REF-INITIATED REVIEW (REPLAY SUPPORTS CALL)"
+ },
+ {
+  "type": "Ref-Initiated Review (Supported)",
+  "text": "(00:00) [Rockets] REF-INITIATED REVIEW (REPLAY SUPPORTS CALL)"
+ },
+ {
+  "type": "Running Alley Oop Dunk Shot",
+  "text": "Amen Thompson makes 1-foot dunk (Alperen Sengun assists)"
+ },
+ {
+  "type": "Running Alley Oop Dunk Shot",
+  "text": "Cooper Flagg makes 1-foot dunk (Naji Marshall assists)"
+ },
+ {
+  "type": "Running Dunk Shot",
+  "text": "Alperen Sengun makes 6-foot running dunk (Fred VanVleet assists)"
+ },
+ {
+  "type": "Running Dunk Shot",
+  "text": "Max Christie makes 1-foot running dunk (Naji Marshall assists)"
+ },
+ {
+  "type": "Running Dunk Shot",
+  "text": "Tari Eason makes running dunk (Reed Sheppard assists)"
+ },
+ {
+  "type": "Running Dunk Shot",
+  "text": "Victor Wembanyama makes 1-foot running dunk (De'Aaron Fox assists)"
+ },
+ {
+  "type": "Running Dunk Shot",
+  "text": "Victor Wembanyama makes 1-foot running dunk (Stephon Castle assists)"
+ },
+ {
+  "type": "Running Finger Roll Layup",
+  "text": "Devin Vassell makes two point shot"
+ },
+ {
+  "type": "Running Finger Roll Layup",
+  "text": "Jalen Brunson makes two point shot"
+ },
+ {
+  "type": "Running Finger Roll Layup",
+  "text": "Jalen Brunson misses two point shot"
+ },
+ {
+  "type": "Running Finger Roll Layup",
+  "text": "Josh Hart makes two point shot"
+ },
+ {
+  "type": "Running Finger Roll Layup",
+  "text": "Naji Marshall makes two point shot (Zaccharie Risacher assists)"
+ },
+ {
+  "type": "Running Jump Shot",
+  "text": "Bogdan Bogdanovic misses 23-foot running jump shot"
+ },
+ {
+  "type": "Running Jump Shot",
+  "text": "Fred VanVleet makes 24-foot running jump shot (Alperen Sengun assists)"
+ },
+ {
+  "type": "Running Jump Shot",
+  "text": "Isaiah Crawford misses 23-foot running jump shot"
+ },
+ {
+  "type": "Running Jump Shot",
+  "text": "Jabari Smith Jr. misses 24-foot running jump shot"
+ },
+ {
+  "type": "Running Jump Shot",
+  "text": "John Poulakidas misses 26-foot running jump shot"
+ },
+ {
+  "type": "Running Jump Shot",
+  "text": "Jordan Clarkson misses 23-foot running jump shot"
+ },
+ {
+  "type": "Running Jump Shot",
+  "text": "Julian Champagnie misses 23-foot running jump shot"
+ },
+ {
+  "type": "Running Jump Shot",
+  "text": "Sergio de Larrea makes 23-foot running jump shot (Max Christie assists)"
+ },
+ {
+  "type": "Running Layup Shot",
+  "text": "Daniel Gafford makes running layup (Cooper Flagg assists)"
+ },
+ {
+  "type": "Running Layup Shot",
+  "text": "De'Aaron Fox misses running layup"
+ },
+ {
+  "type": "Running Layup Shot",
+  "text": "Kevin Durant misses running layup"
+ },
+ {
+  "type": "Running Layup Shot",
+  "text": "Mikal Bridges blocks Dylan Harper 's 6-foot running layup"
+ },
+ {
+  "type": "Running Layup Shot",
+  "text": "Naji Marshall misses running layup"
+ },
+ {
+  "type": "Running Layup Shot",
+  "text": "OG Anunoby makes running layup"
+ },
+ {
+  "type": "Running Layup Shot",
+  "text": "OG Anunoby misses running layup"
+ },
+ {
+  "type": "Running Layup Shot",
+  "text": "Reed Sheppard misses running layup"
+ },
+ {
+  "type": "Running Pullup Jump Shot",
+  "text": "Dylan Harper makes 7-foot running pullup jump shot"
+ },
+ {
+  "type": "Running Pullup Jump Shot",
+  "text": "Fred VanVleet makes 32-foot running pullup jump shot"
+ },
+ {
+  "type": "Running Pullup Jump Shot",
+  "text": "Jalen Brunson misses running pullup jump shot"
+ },
+ {
+  "type": "Running Pullup Jump Shot",
+  "text": "Keldon Johnson misses running pullup jump shot"
+ },
+ {
+  "type": "Running Pullup Jump Shot",
+  "text": "Max Christie misses running pullup jump shot"
+ },
+ {
+  "type": "Running Pullup Jump Shot",
+  "text": "Reed Sheppard makes 27-foot running pullup jump shot (Bogdan Bogdanovic assists)"
+ },
+ {
+  "type": "Running Pullup Jump Shot",
+  "text": "Zaccharie Risacher misses running pullup jump shot"
+ },
+ {
+  "type": "Shooting Foul",
+  "text": "Cooper Flagg shooting foul"
+ },
+ {
+  "type": "Shooting Foul",
+  "text": "Daniel Gafford shooting foul"
+ },
+ {
+  "type": "Shooting Foul",
+  "text": "Devin Vassell shooting foul"
+ },
+ {
+  "type": "Shooting Foul",
+  "text": "Dwight Powell shooting foul"
+ },
+ {
+  "type": "Shooting Foul",
+  "text": "Dylan Harper shooting foul"
+ },
+ {
+  "type": "Shooting Foul",
+  "text": "Jabari Smith Jr. shooting foul"
+ },
+ {
+  "type": "Shooting Foul",
+  "text": "Josh Hart shooting foul"
+ },
+ {
+  "type": "Shooting Foul",
+  "text": "Julian Champagnie shooting foul"
+ },
+ {
+  "type": "Shooting Foul",
+  "text": "Karl-Anthony Towns shooting foul"
+ },
+ {
+  "type": "Shooting Foul",
+  "text": "Luke Kornet shooting foul"
+ },
+ {
+  "type": "Shooting Foul",
+  "text": "Max Christie shooting foul"
+ },
+ {
+  "type": "Shooting Foul",
+  "text": "Miles McBride shooting foul"
+ },
+ {
+  "type": "Shooting Foul",
+  "text": "OG Anunoby shooting foul"
+ },
+ {
+  "type": "Shooting Foul",
+  "text": "Stephon Castle shooting foul"
+ },
+ {
+  "type": "Shooting Foul",
+  "text": "Steven Adams shooting foul"
+ },
+ {
+  "type": "Shooting Foul",
+  "text": "Tari Eason shooting foul"
+ },
+ {
+  "type": "Shooting Foul",
+  "text": "Tobi Lawal shooting foul"
+ },
+ {
+  "type": "Shooting Foul",
+  "text": "Victor Wembanyama shooting foul"
+ },
+ {
+  "type": "Shooting Foul",
+  "text": "Zaccharie Risacher shooting foul"
+ },
+ {
+  "type": "Shot Clock Turnover",
+  "text": "shot clock turnover "
+ },
+ {
+  "type": "Step Back Jump Shot",
+  "text": "Cooper Flagg misses 24-foot three point step back jumpshot"
+ },
+ {
+  "type": "Step Back Jump Shot",
+  "text": "De'Aaron Fox misses 10-foot step back jumpshot"
+ },
+ {
+  "type": "Step Back Jump Shot",
+  "text": "Devin Vassell blocks OG Anunoby 's 23-foot three point step back jumpshot"
+ },
+ {
+  "type": "Step Back Jump Shot",
+  "text": "Dylan Harper makes 16-foot step back jumpshot (Devin Vassell assists)"
+ },
+ {
+  "type": "Step Back Jump Shot",
+  "text": "Fred VanVleet makes 25-foot three point step back jumpshot (Alperen Sengun assists)"
+ },
+ {
+  "type": "Step Back Jump Shot",
+  "text": "Jalen Brunson makes 11-foot step back jumpshot"
+ },
+ {
+  "type": "Step Back Jump Shot",
+  "text": "Jalen Brunson misses 14-foot step back jumpshot"
+ },
+ {
+  "type": "Step Back Jump Shot",
+  "text": "Josh Hart misses 25-foot three point step back jumpshot"
+ },
+ {
+  "type": "Step Back Jump Shot",
+  "text": "Julian Champagnie makes 25-foot three point step back jumpshot (De'Aaron Fox assists)"
+ },
+ {
+  "type": "Step Back Jump Shot",
+  "text": "Karl-Anthony Towns misses 25-foot three point step back jumpshot"
+ },
+ {
+  "type": "Step Back Jump Shot",
+  "text": "Landry Shamet misses 25-foot three point step back jumpshot"
+ },
+ {
+  "type": "Step Back Jump Shot",
+  "text": "Max Christie misses 25-foot three point step back jumpshot"
+ },
+ {
+  "type": "Step Back Jump Shot",
+  "text": "OG Anunoby misses 12-foot step back jumpshot"
+ },
+ {
+  "type": "Step Back Jump Shot",
+  "text": "OG Anunoby misses 25-foot three point step back jumpshot"
+ },
+ {
+  "type": "Step Back Jump Shot",
+  "text": "Tari Eason misses 14-foot step back jumpshot"
+ },
+ {
+  "type": "Step Back Jump Shot",
+  "text": "Tarik Biberovic misses 23-foot three point step back jumpshot"
+ },
+ {
+  "type": "Substitution",
+  "text": "Alperen Sengun enters the game for Steven Adams"
+ },
+ {
+  "type": "Substitution",
+  "text": "Amen Thompson enters the game for Fred VanVleet"
+ },
+ {
+  "type": "Substitution",
+  "text": "Ariel Hukporti enters the game for Landry Shamet"
+ },
+ {
+  "type": "Substitution",
+  "text": "Ariel Hukporti enters the game for Mitchell Robinson"
+ },
+ {
+  "type": "Substitution",
+  "text": "Ariel Hukporti enters the game for OG Anunoby"
+ },
+ {
+  "type": "Substitution",
+  "text": "Bogdan Bogdanovic enters the game for Fred VanVleet"
+ },
+ {
+  "type": "Substitution",
+  "text": "Bogdan Bogdanovic enters the game for Jabari Smith Jr."
+ },
+ {
+  "type": "Substitution",
+  "text": "Bogdan Bogdanovic enters the game for Kevin Durant"
+ },
+ {
+  "type": "Substitution",
+  "text": "Carter Bryant enters the game for Devin Vassell"
+ },
+ {
+  "type": "Substitution",
+  "text": "Cooper Flagg enters the game for Daniel Gafford"
+ },
+ {
+  "type": "Substitution",
+  "text": "Cooper Flagg enters the game for Tarik Biberovic"
+ },
+ {
+  "type": "Substitution",
+  "text": "Daniel Gafford enters the game for Dwight Powell"
+ },
+ {
+  "type": "Substitution",
+  "text": "Daniel Gafford enters the game for Naji Marshall"
+ },
+ {
+  "type": "Substitution",
+  "text": "De'Aaron Fox enters the game for Carter Bryant"
+ },
+ {
+  "type": "Substitution",
+  "text": "De'Aaron Fox enters the game for Dylan Harper"
+ },
+ {
+  "type": "Substitution",
+  "text": "De'Aaron Fox enters the game for Luke Kornet"
+ },
+ {
+  "type": "Substitution",
+  "text": "De'Aaron Fox enters the game for Stephon Castle"
+ },
+ {
+  "type": "Substitution",
+  "text": "Devin Vassell enters the game for Luke Kornet"
+ },
+ {
+  "type": "Substitution",
+  "text": "Devin Vassell enters the game for Stephon Castle"
+ },
+ {
+  "type": "Substitution",
+  "text": "Devin Vassell enters the game for Victor Wembanyama"
+ },
+ {
+  "type": "Substitution",
+  "text": "Dwight Powell enters the game for John Poulakidas"
+ },
+ {
+  "type": "Substitution",
+  "text": "Dwight Powell enters the game for Morez Johnson Jr."
+ },
+ {
+  "type": "Substitution",
+  "text": "Dylan Harper enters the game for De'Aaron Fox"
+ },
+ {
+  "type": "Substitution",
+  "text": "Dylan Harper enters the game for Luke Kornet"
+ },
+ {
+  "type": "Substitution",
+  "text": "Dylan Harper enters the game for Stephon Castle"
+ },
+ {
+  "type": "Substitution",
+  "text": "Dylan Harper enters the game for Victor Wembanyama"
+ },
+ {
+  "type": "Substitution",
+  "text": "Fred VanVleet enters the game for Tari Eason"
+ },
+ {
+  "type": "Substitution",
+  "text": "Isaiah Crawford enters the game for Amen Thompson"
+ },
+ {
+  "type": "Substitution",
+  "text": "Jabari Smith Jr. enters the game for Bogdan Bogdanovic"
+ },
+ {
+  "type": "Substitution",
+  "text": "Jalen Brunson enters the game for Jose Alvarado"
+ },
+ {
+  "type": "Substitution",
+  "text": "Jalen Brunson enters the game for Mitchell Robinson"
+ },
+ {
+  "type": "Substitution",
+  "text": "Jeremy Sochan enters the game for Mitchell Robinson"
+ },
+ {
+  "type": "Substitution",
+  "text": "Jett Howard enters the game for Sergio de Larrea"
+ },
+ {
+  "type": "Substitution",
+  "text": "Jett Howard enters the game for Seth Lundy"
+ },
+ {
+  "type": "Substitution",
+  "text": "John Poulakidas enters the game for Naji Marshall"
+ },
+ {
+  "type": "Substitution",
+  "text": "John Poulakidas enters the game for Tobi Lawal"
+ },
+ {
+  "type": "Substitution",
+  "text": "Jordan Clarkson enters the game for Landry Shamet"
+ },
+ {
+  "type": "Substitution",
+  "text": "Jose Alvarado enters the game for Mikal Bridges"
+ },
+ {
+  "type": "Substitution",
+  "text": "Jose Alvarado enters the game for Miles McBride"
+ },
+ {
+  "type": "Substitution",
+  "text": "Josh Hart enters the game for Landry Shamet"
+ },
+ {
+  "type": "Substitution",
+  "text": "Josh Hart enters the game for Mitchell Robinson"
+ },
+ {
+  "type": "Substitution",
+  "text": "Josh Hart enters the game for OG Anunoby"
+ },
+ {
+  "type": "Substitution",
+  "text": "Julian Champagnie enters the game for Devin Vassell"
+ },
+ {
+  "type": "Substitution",
+  "text": "Julian Champagnie enters the game for Dylan Harper"
+ },
+ {
+  "type": "Substitution",
+  "text": "Julian Champagnie enters the game for Keldon Johnson"
+ },
+ {
+  "type": "Substitution",
+  "text": "Julian Champagnie enters the game for Stephon Castle"
+ },
+ {
+  "type": "Substitution",
+  "text": "Karl-Anthony Towns enters the game for Mitchell Robinson"
+ },
+ {
+  "type": "Substitution",
+  "text": "Keldon Johnson enters the game for Dylan Harper"
+ },
+ {
+  "type": "Substitution",
+  "text": "Keldon Johnson enters the game for Julian Champagnie"
+ },
+ {
+  "type": "Substitution",
+  "text": "Keldon Johnson enters the game for Stephon Castle"
+ },
+ {
+  "type": "Substitution",
+  "text": "Kevin Durant enters the game for Amen Thompson"
+ },
+ {
+  "type": "Substitution",
+  "text": "Landry Shamet enters the game for Ariel Hukporti"
+ },
+ {
+  "type": "Substitution",
+  "text": "Landry Shamet enters the game for Jalen Brunson"
+ },
+ {
+  "type": "Substitution",
+  "text": "Landry Shamet enters the game for Jordan Clarkson"
+ },
+ {
+  "type": "Substitution",
+  "text": "Landry Shamet enters the game for OG Anunoby"
+ },
+ {
+  "type": "Substitution",
+  "text": "Luke Kornet enters the game for De'Aaron Fox"
+ },
+ {
+  "type": "Substitution",
+  "text": "Luke Kornet enters the game for Julian Champagnie"
+ },
+ {
+  "type": "Substitution",
+  "text": "Luke Kornet enters the game for Victor Wembanyama"
+ },
+ {
+  "type": "Substitution",
+  "text": "Max Christie enters the game for Sergio de Larrea"
+ },
+ {
+  "type": "Substitution",
+  "text": "Max Christie enters the game for Tarik Biberovic"
+ },
+ {
+  "type": "Substitution",
+  "text": "Mikal Bridges enters the game for Jalen Brunson"
+ },
+ {
+  "type": "Substitution",
+  "text": "Mikal Bridges enters the game for Landry Shamet"
+ },
+ {
+  "type": "Substitution",
+  "text": "Miles McBride enters the game for Jalen Brunson"
+ },
+ {
+  "type": "Substitution",
+  "text": "Miles McBride enters the game for Mikal Bridges"
+ },
+ {
+  "type": "Substitution",
+  "text": "Miles McBride enters the game for OG Anunoby"
+ },
+ {
+  "type": "Substitution",
+  "text": "Mitchell Robinson enters the game for Ariel Hukporti"
+ },
+ {
+  "type": "Substitution",
+  "text": "Mitchell Robinson enters the game for Jalen Brunson"
+ },
+ {
+  "type": "Substitution",
+  "text": "Mitchell Robinson enters the game for Karl-Anthony Towns"
+ },
+ {
+  "type": "Substitution",
+  "text": "Mitchell Robinson enters the game for Miles McBride"
+ },
+ {
+  "type": "Substitution",
+  "text": "Morez Johnson Jr. enters the game for Daniel Gafford"
+ },
+ {
+  "type": "Substitution",
+  "text": "Morez Johnson Jr. enters the game for Seth Lundy"
+ },
+ {
+  "type": "Substitution",
+  "text": "Moussa Cisse enters the game for Dwight Powell"
+ },
+ {
+  "type": "Substitution",
+  "text": "Moussa Cisse enters the game for Seth Lundy"
+ },
+ {
+  "type": "Substitution",
+  "text": "Naji Marshall enters the game for Max Christie"
+ },
+ {
+  "type": "Substitution",
+  "text": "Naji Marshall enters the game for Moussa Cisse"
+ },
+ {
+  "type": "Substitution",
+  "text": "Naji Marshall enters the game for Tarik Biberovic"
+ },
+ {
+  "type": "Substitution",
+  "text": "OG Anunoby enters the game for Josh Hart"
+ },
+ {
+  "type": "Substitution",
+  "text": "OG Anunoby enters the game for Miles McBride"
+ },
+ {
+  "type": "Substitution",
+  "text": "Oscar Tshiebwe enters the game for Steven Adams"
+ },
+ {
+  "type": "Substitution",
+  "text": "Reed Sheppard enters the game for Jabari Smith Jr."
+ },
+ {
+  "type": "Substitution",
+  "text": "Sergio de Larrea enters the game for Morez Johnson Jr."
+ },
+ {
+  "type": "Substitution",
+  "text": "Sergio de Larrea enters the game for Naji Marshall"
+ },
+ {
+  "type": "Substitution",
+  "text": "Sergio de Larrea enters the game for Tarik Biberovic"
+ },
+ {
+  "type": "Substitution",
+  "text": "Seth Lundy enters the game for Cooper Flagg"
+ },
+ {
+  "type": "Substitution",
+  "text": "Seth Lundy enters the game for Max Christie"
+ },
+ {
+  "type": "Substitution",
+  "text": "Seth Lundy enters the game for Zaccharie Risacher"
+ },
+ {
+  "type": "Substitution",
+  "text": "Stephon Castle enters the game for De'Aaron Fox"
+ },
+ {
+  "type": "Substitution",
+  "text": "Stephon Castle enters the game for Dylan Harper"
+ },
+ {
+  "type": "Substitution",
+  "text": "Stephon Castle enters the game for Julian Champagnie"
+ },
+ {
+  "type": "Substitution",
+  "text": "Stephon Castle enters the game for Keldon Johnson"
+ },
+ {
+  "type": "Substitution",
+  "text": "Steven Adams enters the game for Alperen Sengun"
+ },
+ {
+  "type": "Substitution",
+  "text": "Tari Eason enters the game for Amen Thompson"
+ },
+ {
+  "type": "Substitution",
+  "text": "Tari Eason enters the game for Kevin Durant"
+ },
+ {
+  "type": "Substitution",
+  "text": "Tari Eason enters the game for Reed Sheppard"
+ },
+ {
+  "type": "Substitution",
+  "text": "Tarik Biberovic enters the game for Cooper Flagg"
+ },
+ {
+  "type": "Substitution",
+  "text": "Tarik Biberovic enters the game for Dwight Powell"
+ },
+ {
+  "type": "Substitution",
+  "text": "Tarik Biberovic enters the game for Jett Howard"
+ },
+ {
+  "type": "Substitution",
+  "text": "Tarik Biberovic enters the game for Max Christie"
+ },
+ {
+  "type": "Substitution",
+  "text": "Tarik Biberovic enters the game for Tobi Lawal"
+ },
+ {
+  "type": "Substitution",
+  "text": "Tobi Lawal enters the game for Cooper Flagg"
+ },
+ {
+  "type": "Substitution",
+  "text": "Tobi Lawal enters the game for Zaccharie Risacher"
+ },
+ {
+  "type": "Substitution",
+  "text": "Victor Wembanyama enters the game for Dylan Harper"
+ },
+ {
+  "type": "Substitution",
+  "text": "Victor Wembanyama enters the game for Keldon Johnson"
+ },
+ {
+  "type": "Substitution",
+  "text": "Victor Wembanyama enters the game for Luke Kornet"
+ },
+ {
+  "type": "Substitution",
+  "text": "Victor Wembanyama enters the game for Stephon Castle"
+ },
+ {
+  "type": "Substitution",
+  "text": "Zaccharie Risacher enters the game for Sergio de Larrea"
+ },
+ {
+  "type": "Tip Dunk Shot",
+  "text": "Jabari Smith Jr. makes tip in dunk"
+ },
+ {
+  "type": "Tip Dunk Shot",
+  "text": "Stephon Castle makes tip in dunk"
+ },
+ {
+  "type": "Tip Dunk Shot",
+  "text": "Victor Wembanyama makes tip in dunk"
+ },
+ {
+  "type": "Tip Shot",
+  "text": "Amen Thompson misses 2-foot tip shot"
+ },
+ {
+  "type": "Tip Shot",
+  "text": "Cooper Flagg makes tip shot"
+ },
+ {
+  "type": "Tip Shot",
+  "text": "Jordan Clarkson misses tip shot"
+ },
+ {
+  "type": "Tip Shot",
+  "text": "Mitchell Robinson makes tip shot"
+ },
+ {
+  "type": "Tip Shot",
+  "text": "Mitchell Robinson misses tip shot"
+ },
+ {
+  "type": "Tip Shot",
+  "text": "Victor Wembanyama misses 1-foot tip shot"
+ },
+ {
+  "type": "Tip Shot",
+  "text": "Zaccharie Risacher misses tip shot"
+ },
+ {
+  "type": "Turnaround Bank Jump Shot",
+  "text": "Josh Hart misses 19-foot two point shot"
+ },
+ {
+  "type": "Turnaround Fade Away Jump Shot",
+  "text": "Jalen Brunson misses 13-foot two point shot"
+ },
+ {
+  "type": "Turnaround Fade Away Jump Shot",
+  "text": "Karl-Anthony Towns makes 18-foot two point shot"
+ },
+ {
+  "type": "Turnaround Fade Away Jump Shot",
+  "text": "Landry Shamet misses 20-foot two point shot"
+ },
+ {
+  "type": "Turnaround Jump Shot",
+  "text": "Dylan Harper makes 8-foot turnaround jump shot"
+ },
+ {
+  "type": "Turnaround Jump Shot",
+  "text": "Dylan Harper misses 9-foot turnaround jump shot"
+ },
+ {
+  "type": "Turnaround Jump Shot",
+  "text": "Jalen Brunson misses 14-foot turnaround jump shot"
+ },
+ {
+  "type": "Turnaround Jump Shot",
+  "text": "Josh Hart misses 9-foot turnaround jump shot"
+ },
+ {
+  "type": "Turnaround Jump Shot",
+  "text": "Kevin Durant misses 9-foot turnaround jump shot"
+ },
+ {
+  "type": "Turnaround Jump Shot",
+  "text": "Victor Wembanyama makes 10-foot turnaround jump shot"
+ }
+]

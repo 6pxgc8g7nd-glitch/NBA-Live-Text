@@ -1,0 +1,8 @@
+{
+  "name": "nba-live-text",
+  "private": true,
+  "description": "NBA 即時比分與文字轉播(PWA)",
+  "scripts": {
+    "test": "node --test tests/*.test.js"
+  }
+}
