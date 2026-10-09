@@ -1,6 +1,23 @@
 // 附加功能:勝率走勢、投籃圖、排名、球員小卡
 // 依賴 index.html 內的 API、get、esc、logo、view、app、$、schedule、zhPlay(呼叫時才用到,載入順序不影響)
 
+/* ---------- 圖示(內嵌 SVG,不使用 emoji) ---------- */
+const ICONS={
+  play:'<path d="M7 4.5v15l12-7.5z" fill="currentColor"/>',
+  pause:'<rect x="6" y="4.5" width="4" height="15" fill="currentColor"/><rect x="14" y="4.5" width="4" height="15" fill="currentColor"/>',
+  prev:'<path d="M6 5v14"/><path d="M19 5.5v13L9 12z" fill="currentColor"/>',
+  next:'<path d="M18 5v14"/><path d="M5 5.5v13L15 12z" fill="currentColor"/>',
+  restart:'<path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1"/><path d="M3.5 4v5h5"/>',
+  theme:'<circle cx="12" cy="12" r="8.5"/><path d="M12 3.5a8.5 8.5 0 0 1 0 17z" fill="currentColor"/>',
+  close:'<path d="M6 6l12 12M18 6L6 18"/>',
+  left:'<path d="M15 5l-7 7 7 7"/>',
+  right:'<path d="M9 5l7 7-7 7"/>',
+  up:'<path d="M5 15l7-7 7 7"/>',
+  down:'<path d="M5 9l7 7 7-7"/>'
+};
+const ico=n=>`<svg class="i" viewBox="0 0 24 24" aria-hidden="true">${ICONS[n]}</svg>`;
+const dotHTML='<i class="dot" aria-hidden="true"></i>';
+
 /* ---------- 導覽(賽程 / 排名) ---------- */
 const navHTML=a=>`<div class="nav"><button data-nav="list" class="${a==='list'?'on':''}">賽程</button><button data-nav="standings" class="${a==='standings'?'on':''}">排名</button></div>`;
 function bindNav(){
@@ -43,7 +60,7 @@ function wpHTML(d,cs){
   const hc=teamColor(home.team,'#b3261e'),ac=teamColor(away.team,'#1d428a');
   const q=p=>p.period?.number>4?'OT'+(p.period.number-4):'Q'+(p.period?.number??'');
   return `<div class="wp">
-    <div class="wpl"><span style="color:${hc}">▲ ${esc(home.team.abbreviation)}(主)</span><span style="color:${ac}">▼ ${esc(away.team.abbreviation)}(客)</span></div>
+    <div class="wpl"><span style="color:${hc}"><i class="sq" style="background:${hc}"></i>${esc(home.team.abbreviation)}(主,線上方)</span><span style="color:${ac}"><i class="sq" style="background:${ac}"></i>${esc(away.team.abbreviation)}(客,線下方)</span></div>
     <svg id="wpsvg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" role="img" aria-label="主隊勝率走勢">
       <defs><clipPath id="cu"><rect x="0" y="0" width="${W}" height="${mid}"/></clipPath><clipPath id="cd"><rect x="0" y="${mid}" width="${W}" height="${mid}"/></clipPath></defs>
       <path d="${area(y=>Math.min(y,mid))}" fill="${hc}" opacity=".35"/>
@@ -154,12 +171,12 @@ async function openPlayer(id){
     const inch=(p.displayHeight||'').match(/(\d+)'\s*(\d+)/),cm=inch?Math.round((+inch[1]*12+ +inch[2])*2.54):null;
     const lb=(p.displayWeight||'').match(/(\d+)/),kg=lb?Math.round(+lb[1]*.4536):null;
     const info=[p.team?.displayName,p.displayJersey?'#'+p.displayJersey.replace('#',''):'',POS_ZH[pos]||pos,p.age?p.age+' 歲':'',cm?`${cm} 公分`:'',kg?`${kg} 公斤`:'',p.displayExperience?'球齡 '+p.displayExperience:'',p.displayDraft?'選秀 '+p.displayDraft:''].filter(Boolean);
-    m.innerHTML=`<div class="mc"><button class="mx" aria-label="關閉">✕</button>
+    m.innerHTML=`<div class="mc"><button class="mx" aria-label="關閉">${ico('close')}</button>
       <div class="ph">${p.headshot?.href?`<img src="${esc(p.headshot.href)}" alt="">`:''}<div><div class="pn">${esc(p.displayName)}</div><div class="pi">${info.map(esc).join(' · ')}</div></div></div>
       ${st?`<div class="scroll"><table><tr><th></th>${st.labels.map(l=>`<th>${esc(PSTAT[l]||l)}</th>`).join('')}</tr>${st.splits.map(s=>`<tr><td>${esc(SPLIT_ZH[s.displayName]||s.displayName)}</td>${s.stats.map(v=>`<td>${esc(v)}</td>`).join('')}</tr>`).join('')}</table></div><div class="foot" style="margin:8px 0 0;text-align:left">場均數據</div>`:'<div class="empty">沒有統計資料</div>'}</div>`;
     m.querySelector('.mx').onclick=close;
   }catch(e){
-    m.innerHTML='<div class="mc"><button class="mx" aria-label="關閉">✕</button><div class="empty">讀取球員資料失敗</div></div>';
+    m.innerHTML=`<div class="mc"><button class="mx" aria-label="關閉">${ico('close')}</button><div class="empty">讀取球員資料失敗</div></div>`;
     m.querySelector('.mx').onclick=close;
   }
 }
@@ -179,8 +196,8 @@ function replayHTML(d){
     <div class="rpbar">
       <div class="rpscore"><div class="rpt" id="rpt"></div><div class="rps" id="rps"></div><div class="rpnow" id="rpn"></div></div>
       <div class="rpctl">
-        <button id="rppv" title="上一筆 (←)">⏮</button><button id="rpp" title="播放 / 暫停 (空白鍵)"></button><button id="rpnx" title="下一筆 (→)">⏭</button><button id="rpr" title="從頭開始">↺</button>
-        <span class="rpsp">${[1,10,30,100].map(v=>`<button data-sp="${v}" title="↑↓ 調速">×${v}</button>`).join('')}</span>
+        <button id="rppv" title="上一筆(左方向鍵)" aria-label="上一筆">${ico('prev')}</button><button id="rpp" title="播放 / 暫停(空白鍵)"></button><button id="rpnx" title="下一筆(右方向鍵)" aria-label="下一筆">${ico('next')}</button><button id="rpr" title="從頭開始" aria-label="從頭開始">${ico('restart')}</button>
+        <span class="rpsp">${[1,10,30,100].map(v=>`<button data-sp="${v}" title="上下方向鍵調速">×${v}</button>`).join('')}</span>
       </div>
       <input type="range" id="rpl" min="0" max="${plays.length}" value="0" aria-label="重播進度">
     </div>
@@ -189,7 +206,7 @@ function replayHTML(d){
     <div class="rpq" id="rpq"></div>
     <ul class="plays" id="rpf"></ul>
     <div class="sec">到目前為止的投籃</div><div id="rpc"></div>
-    <div class="foot" style="margin-top:14px">快捷鍵:空白鍵 播放/暫停 · ← → 上一筆/下一筆 · ↑ ↓ 調速</div>
+    <div class="foot" style="margin-top:14px">快捷鍵:空白鍵 播放/暫停 · 左右方向鍵 上一筆/下一筆 · 上下方向鍵 調速</div>
   </div>`;
 }
 function bindReplay(d,cs){
@@ -217,7 +234,7 @@ function bindReplay(d,cs){
   }
 
   const sync=()=>{
-    $('#rpp').textContent=rp.playing?'⏸ 暫停':rp.idx>=n?'↻ 再看一次':'▶ 播放';
+    $('#rpp').innerHTML=rp.playing?ico('pause')+' 暫停':rp.idx>=n?ico('restart')+' 再看一次':ico('play')+' 播放';
     document.querySelectorAll('[data-sp]').forEach(b=>b.classList.toggle('on',+b.dataset.sp===rp.speed));
     $('#rpl').value=rp.idx;
     $('#rppv').disabled=rp.idx<=0;$('#rpnx').disabled=rp.idx>=n;
@@ -236,7 +253,7 @@ function bindReplay(d,cs){
     const dotOf=p=>dot(p,col[p.team?.id]||'var(--ink)',col[p.team?.id]||'var(--acc)');
     const svg=$('#rpc .court');
     if(svg&&rp.drawn>=0&&i>rp.drawn){svg.insertAdjacentHTML('beforeend',plays.slice(rp.drawn,i).filter(isShot).map(dotOf).join(''))}
-    else{$('#rpc').innerHTML=courtSVG(plays.slice(0,i).filter(isShot).map(dotOf).join(''))+`<div class="wpinfo" style="text-align:center">${cs.map(x=>`<span style="color:${col[x.id]};font-weight:700">● ${esc(x.team.abbreviation)}</span>`).join(' &nbsp; ')} · 圓點命中、叉叉未進</div>`}
+    else{$('#rpc').innerHTML=courtSVG(plays.slice(0,i).filter(isShot).map(dotOf).join(''))+`<div class="wpinfo" style="text-align:center">${cs.map(x=>`<span style="color:${col[x.id]};font-weight:700"><i class="sq" style="background:${col[x.id]};border-radius:50%"></i>${esc(x.team.abbreviation)}</span>`).join(' &nbsp; ')} · 圓點命中、叉叉未進</div>`}
     rp.drawn=i;
     sync();
   };
@@ -290,4 +307,4 @@ document.addEventListener('keydown',e=>{
   else if(k==='ArrowUp'){e.preventDefault();rp.step.faster()}
   else if(k==='ArrowDown'){e.preventDefault();rp.step.slower()}
 });
-document.addEventListener('visibilitychange',()=>{if(document.hidden&&rp.playing){rpStop();const b=document.getElementById('rpp');if(b)b.textContent='▶ 播放'}});
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&rp.playing){rpStop();const b=document.getElementById('rpp');if(b)b.innerHTML=ico('play')+' 播放'}});
