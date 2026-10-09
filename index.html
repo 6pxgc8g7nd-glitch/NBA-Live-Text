@@ -129,11 +129,12 @@ function schedule(ms,fn){clearTimeout(timer);timer=setTimeout(fn,ms)}
 function openGame(id){view={type:'game',id};tab='plays';history.replaceState(null,'','#'+id);renderGame(true)}
 function openList(){view={type:'list'};history.replaceState(null,'',location.pathname);renderList(true)}
 
+const STAT_ZH={MIN:'時間',PTS:'得分',FG:'投籃','3PT':'三分',FT:'罰球',REB:'籃板',AST:'助攻',TO:'失誤',STL:'抄截',BLK:'阻攻',OREB:'進攻板',DREB:'防守板',PF:'犯規','+/-':'正負值'};
 function boxTable(p){
   const st=p.statistics[0];if(!st)return '';
   const keep=[0,1,2,3,4,5,6,7,8,9,12,13];
   const rows=st.athletes.filter(a=>!a.didNotPlay&&a.stats?.length);
-  return `<div class="scroll"><table><tr><th>${esc(p.team.displayName)}</th>${keep.map(i=>`<th>${esc(st.labels[i])}</th>`).join('')}</tr>`+
+  return `<div class="scroll"><table><tr><th>${esc(p.team.displayName)}</th>${keep.map(i=>`<th>${esc(STAT_ZH[st.labels[i]]||st.labels[i])}</th>`).join('')}</tr>`+
     rows.map(a=>`<tr><td>${esc(a.athlete.shortName||a.athlete.displayName)}${a.starter?'':''}</td>${keep.map(i=>`<td>${esc(a.stats[i])}</td>`).join('')}</tr>`).join('')+`</table></div>`;
 }
 
