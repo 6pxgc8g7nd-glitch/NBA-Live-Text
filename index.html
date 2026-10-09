@@ -129,6 +129,29 @@ header button .i{width:1.25em;height:1.25em;vertical-align:middle}
 .dc{display:flex;gap:8px;align-items:center}
 body:not([data-view=list]) .dc{display:none}
 .et{font-size:11px;color:var(--dim);letter-spacing:.04em}
+.bar select{background:var(--card);color:var(--ink);border:1px solid var(--ink);border-radius:0;padding:5px 8px;font:inherit;min-height:36px}
+.bw{min-width:960px}
+.bconf{display:grid;grid-template-columns:3fr 1fr 3fr;font:900 14px var(--serif);letter-spacing:.2em;text-align:center;border-bottom:1px solid var(--ink);padding-bottom:4px;margin-bottom:6px}
+.br{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.bc{display:flex;flex-direction:column}
+.bh{font-size:11px;color:var(--dim);text-align:center;letter-spacing:.06em;margin-bottom:6px}
+.bl{flex:1;display:flex;flex-direction:column;justify-content:space-around;gap:8px}
+.bx{color:var(--dim);font-size:12px;text-align:center}
+.ser{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--ink);padding:4px 8px;cursor:pointer}
+.ser:hover{background:var(--hl)}
+.ser .sr{display:flex;align-items:center;justify-content:space-between;gap:6px;padding:2px 0;font-family:var(--serif)}
+.ser .sr+.sr{border-top:1px solid var(--line)}
+.ser .tl{display:flex;align-items:center;gap:6px;font-weight:700}
+.ser .tl img{width:22px;height:22px}
+.ser .sr b{font-size:17px;font-variant-numeric:tabular-nums}
+.ser .sr.out{opacity:.45}
+.ser .sr.win .tl{color:var(--acc)}
+.ser .ss{font-size:11px;color:var(--dim);border-top:1px solid var(--line);margin-top:2px;padding-top:2px;text-align:center}
+.tl:hover{color:var(--acc)}
+.tsch li{cursor:pointer}
+.tsch li:hover{background:var(--hl)}
+.rw{color:var(--acc)}
+.rl{color:var(--dim)}
 .foot{color:var(--dim);font-size:12px;text-align:center;margin:30px 0;font-family:var(--serif)}
 </style>
 </head>
@@ -143,6 +166,7 @@ body:not([data-view=list]) .dc{display:none}
 <main id="app"></main>
 <script src="zh.js"></script>
 <script src="features.js"></script>
+<script src="playoffs.js"></script>
 <script>
 const API='https://site.api.espn.com/apis/site/v2/sports/basketball/nba';
 const $=s=>document.querySelector(s), app=$('#app');
@@ -174,6 +198,7 @@ function gameCard(e){
 }
 
 async function renderList(first){
+  if(view.type!=='list')return;
   document.body.dataset.view='list';
   try{
     const d=await get(`${API}/scoreboard${dateStr?'?dates='+ymd(dateStr):''}`);
@@ -208,6 +233,7 @@ function boxTable(p){
 }
 
 async function renderGame(first){
+  if(view.type!=='game')return;
   document.body.dataset.view='game';
   try{
     const d=await get(`${API}/summary?event=${view.id}`);
@@ -234,13 +260,13 @@ async function renderGame(first){
     const scrollY=window.scrollY;
     app.innerHTML=`<button class="back" id="bk">${ico('left')} 返回賽程</button>
       <div class="hero"><div class="mid" style="text-align:center;margin-bottom:8px;${live?'color:var(--live);font-weight:600':''}">${live?dotHTML:''}${esc(lbl)}</div>
-      <div class="teams">${cs.map(x=>`<div><img src="${logo(x.team)}" alt=""><div>${esc(x.team.displayName)}</div></div>`).join('<div class="big">'+(pre?'VS':tab==='replay'?'重播':cs.map(x=>esc(x.score)).join(' : '))+'</div>')}</div>
+      <div class="teams">${cs.map(x=>`<div class="tl" data-team="${x.id}" title="看球隊頁"><img src="${logo(x.team)}" alt=""><div>${esc(x.team.displayName)}</div></div>`).join('<div class="big">'+(pre?'VS':tab==='replay'?'重播':cs.map(x=>esc(x.score)).join(' : '))+'</div>')}</div>
       ${pre||tab==='replay'?'':ls}${seriesText(c)&&tab!=='replay'?`<div class="series" style="text-align:center">${esc(seriesText(c))}</div>`:''}</div>
       <div class="tabs"><button data-t="plays" class="${tab==='plays'?'on':''}">文字轉播</button><button data-t="box" class="${tab==='box'?'on':''}">球員數據</button><button data-t="wp" class="${tab==='wp'?'on':''}">勝率走勢</button><button data-t="shot" class="${tab==='shot'?'on':''}">投籃圖</button>${s.type.completed&&(d.plays||[]).length?`<button data-t="replay" class="${tab==='replay'?'on':''}">重播</button>`:''}</div>${body}`;
     window.scrollTo(0,scrollY);
     $('#bk').onclick=openList;
     document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{tab=b.dataset.t;renderGame()});
-    bindPlayers();if(tab==='wp')bindWp();if(tab==='shot')bindShot(()=>renderGame());if(tab==='replay')bindReplay(d,cs);
+    bindPlayers();bindTeams(app);if(tab==='wp')bindWp();if(tab==='shot')bindShot(()=>renderGame());if(tab==='replay')bindReplay(d,cs);
     const lg=$('#lg');if(lg)lg.onclick=()=>{lang=lang==='zh'?'en':'zh';try{localStorage.lang=lang}catch(e){}renderGame()};
     const os=$('#os');if(os)os.onchange=()=>{onlyScore=os.checked;renderGame()};
     if(!s.type.completed)schedule(live?5000:30000,()=>renderGame());
@@ -274,7 +300,7 @@ $('#prev').onclick=()=>jump(-1);
 $('#next').onclick=()=>jump(1);
 $('#prev').title='上一個比賽日';$('#next').title='下一個比賽日';
 if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
-if(/^#\d+$/.test(location.hash))openGame(location.hash.slice(1));else if(location.hash==='#standings')openStandings();else renderList(true);
+if(/^#\d+$/.test(location.hash))openGame(location.hash.slice(1));else if(location.hash==='#standings')openStandings();else if(location.hash==='#bracket')openBracket();else if(/^#team\/\d+$/.test(location.hash))openTeam(location.hash.slice(6));else renderList(true);
 </script>
 </body>
 </html>

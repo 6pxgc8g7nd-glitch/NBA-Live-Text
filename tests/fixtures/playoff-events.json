@@ -1,0 +1,1682 @@
+[
+ {
+  "id": "401869194",
+  "date": "2026-04-20T01:00Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "West 1st Round - Game 1"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "24",
+      "homeAway": "home",
+      "winner": true,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     },
+     {
+      "id": "22",
+      "homeAway": "away",
+      "winner": false,
+      "team": {
+       "id": "22",
+       "abbreviation": "POR",
+       "displayName": "Portland Trail Blazers"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401869378",
+  "date": "2026-04-22T00:00Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "West 1st Round - Game 2"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "24",
+      "homeAway": "home",
+      "winner": false,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     },
+     {
+      "id": "22",
+      "homeAway": "away",
+      "winner": true,
+      "team": {
+       "id": "22",
+       "abbreviation": "POR",
+       "displayName": "Portland Trail Blazers"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401869382",
+  "date": "2026-04-25T02:30Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "West 1st Round - Game 3"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "22",
+      "homeAway": "home",
+      "winner": false,
+      "team": {
+       "id": "22",
+       "abbreviation": "POR",
+       "displayName": "Portland Trail Blazers"
+      }
+     },
+     {
+      "id": "24",
+      "homeAway": "away",
+      "winner": true,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401869385",
+  "date": "2026-04-26T19:30Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "West 1st Round - Game 4"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "22",
+      "homeAway": "home",
+      "winner": false,
+      "team": {
+       "id": "22",
+       "abbreviation": "POR",
+       "displayName": "Portland Trail Blazers"
+      }
+     },
+     {
+      "id": "24",
+      "homeAway": "away",
+      "winner": true,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401869386",
+  "date": "2026-04-29T01:30Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "West 1st Round - Game 5"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "24",
+      "homeAway": "home",
+      "winner": true,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     },
+     {
+      "id": "22",
+      "homeAway": "away",
+      "winner": false,
+      "team": {
+       "id": "22",
+       "abbreviation": "POR",
+       "displayName": "Portland Trail Blazers"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401871152",
+  "date": "2026-05-05T01:30Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "West Semifinals - Game 1"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "24",
+      "homeAway": "home",
+      "winner": false,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     },
+     {
+      "id": "16",
+      "homeAway": "away",
+      "winner": true,
+      "team": {
+       "id": "16",
+       "abbreviation": "MIN",
+       "displayName": "Minnesota Timberwolves"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401871153",
+  "date": "2026-05-07T01:30Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "West Semifinals - Game 2"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "24",
+      "homeAway": "home",
+      "winner": true,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     },
+     {
+      "id": "16",
+      "homeAway": "away",
+      "winner": false,
+      "team": {
+       "id": "16",
+       "abbreviation": "MIN",
+       "displayName": "Minnesota Timberwolves"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401871154",
+  "date": "2026-05-09T01:30Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "West Semifinals - Game 3"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "16",
+      "homeAway": "home",
+      "winner": false,
+      "team": {
+       "id": "16",
+       "abbreviation": "MIN",
+       "displayName": "Minnesota Timberwolves"
+      }
+     },
+     {
+      "id": "24",
+      "homeAway": "away",
+      "winner": true,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401871155",
+  "date": "2026-05-10T23:30Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "West Semifinals - Game 4"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "16",
+      "homeAway": "home",
+      "winner": true,
+      "team": {
+       "id": "16",
+       "abbreviation": "MIN",
+       "displayName": "Minnesota Timberwolves"
+      }
+     },
+     {
+      "id": "24",
+      "homeAway": "away",
+      "winner": false,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401871156",
+  "date": "2026-05-13T00:00Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "West Semifinals - Game 5"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "24",
+      "homeAway": "home",
+      "winner": true,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     },
+     {
+      "id": "16",
+      "homeAway": "away",
+      "winner": false,
+      "team": {
+       "id": "16",
+       "abbreviation": "MIN",
+       "displayName": "Minnesota Timberwolves"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401871157",
+  "date": "2026-05-16T01:30Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "West Semifinals - Game 6"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "16",
+      "homeAway": "home",
+      "winner": false,
+      "team": {
+       "id": "16",
+       "abbreviation": "MIN",
+       "displayName": "Minnesota Timberwolves"
+      }
+     },
+     {
+      "id": "24",
+      "homeAway": "away",
+      "winner": true,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401873197",
+  "date": "2026-05-19T00:30Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "West Finals - Game 1"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "25",
+      "homeAway": "home",
+      "winner": false,
+      "team": {
+       "id": "25",
+       "abbreviation": "OKC",
+       "displayName": "Oklahoma City Thunder"
+      }
+     },
+     {
+      "id": "24",
+      "homeAway": "away",
+      "winner": true,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401873198",
+  "date": "2026-05-21T00:30Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "West Finals - Game 2"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "25",
+      "homeAway": "home",
+      "winner": true,
+      "team": {
+       "id": "25",
+       "abbreviation": "OKC",
+       "displayName": "Oklahoma City Thunder"
+      }
+     },
+     {
+      "id": "24",
+      "homeAway": "away",
+      "winner": false,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401873199",
+  "date": "2026-05-23T00:30Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "West Finals - Game 3"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "24",
+      "homeAway": "home",
+      "winner": false,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     },
+     {
+      "id": "25",
+      "homeAway": "away",
+      "winner": true,
+      "team": {
+       "id": "25",
+       "abbreviation": "OKC",
+       "displayName": "Oklahoma City Thunder"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401873200",
+  "date": "2026-05-25T00:00Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "West Finals - Game 4"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "24",
+      "homeAway": "home",
+      "winner": true,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     },
+     {
+      "id": "25",
+      "homeAway": "away",
+      "winner": false,
+      "team": {
+       "id": "25",
+       "abbreviation": "OKC",
+       "displayName": "Oklahoma City Thunder"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401873201",
+  "date": "2026-05-27T00:30Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "West Finals - Game 5"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "25",
+      "homeAway": "home",
+      "winner": true,
+      "team": {
+       "id": "25",
+       "abbreviation": "OKC",
+       "displayName": "Oklahoma City Thunder"
+      }
+     },
+     {
+      "id": "24",
+      "homeAway": "away",
+      "winner": false,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401873202",
+  "date": "2026-05-29T00:30Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "West Finals - Game 6"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "24",
+      "homeAway": "home",
+      "winner": true,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     },
+     {
+      "id": "25",
+      "homeAway": "away",
+      "winner": false,
+      "team": {
+       "id": "25",
+       "abbreviation": "OKC",
+       "displayName": "Oklahoma City Thunder"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401873203",
+  "date": "2026-05-31T00:00Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "West Finals - Game 7"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "25",
+      "homeAway": "home",
+      "winner": false,
+      "team": {
+       "id": "25",
+       "abbreviation": "OKC",
+       "displayName": "Oklahoma City Thunder"
+      }
+     },
+     {
+      "id": "24",
+      "homeAway": "away",
+      "winner": true,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401859963",
+  "date": "2026-06-04T00:30Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "NBA Finals - Game 1"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "24",
+      "homeAway": "home",
+      "winner": false,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     },
+     {
+      "id": "18",
+      "homeAway": "away",
+      "winner": true,
+      "team": {
+       "id": "18",
+       "abbreviation": "NY",
+       "displayName": "New York Knicks"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401859964",
+  "date": "2026-06-06T00:30Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "NBA Finals - Game 2"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "24",
+      "homeAway": "home",
+      "winner": false,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     },
+     {
+      "id": "18",
+      "homeAway": "away",
+      "winner": true,
+      "team": {
+       "id": "18",
+       "abbreviation": "NY",
+       "displayName": "New York Knicks"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401859965",
+  "date": "2026-06-09T00:30Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "NBA Finals - Game 3"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "18",
+      "homeAway": "home",
+      "winner": false,
+      "team": {
+       "id": "18",
+       "abbreviation": "NY",
+       "displayName": "New York Knicks"
+      }
+     },
+     {
+      "id": "24",
+      "homeAway": "away",
+      "winner": true,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401859966",
+  "date": "2026-06-11T00:30Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "NBA Finals - Game 4"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "18",
+      "homeAway": "home",
+      "winner": true,
+      "team": {
+       "id": "18",
+       "abbreviation": "NY",
+       "displayName": "New York Knicks"
+      }
+     },
+     {
+      "id": "24",
+      "homeAway": "away",
+      "winner": false,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401859967",
+  "date": "2026-06-14T00:30Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "NBA Finals - Game 5"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "24",
+      "homeAway": "home",
+      "winner": false,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     },
+     {
+      "id": "18",
+      "homeAway": "away",
+      "winner": true,
+      "team": {
+       "id": "18",
+       "abbreviation": "NY",
+       "displayName": "New York Knicks"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401869189",
+  "date": "2026-04-18T22:00Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "East 1st Round - Game 1"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "18",
+      "homeAway": "home",
+      "winner": true,
+      "team": {
+       "id": "18",
+       "abbreviation": "NY",
+       "displayName": "New York Knicks"
+      }
+     },
+     {
+      "id": "1",
+      "homeAway": "away",
+      "winner": false,
+      "team": {
+       "id": "1",
+       "abbreviation": "ATL",
+       "displayName": "Atlanta Hawks"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401869387",
+  "date": "2026-04-21T00:00Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "East 1st Round - Game 2"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "18",
+      "homeAway": "home",
+      "winner": false,
+      "team": {
+       "id": "18",
+       "abbreviation": "NY",
+       "displayName": "New York Knicks"
+      }
+     },
+     {
+      "id": "1",
+      "homeAway": "away",
+      "winner": true,
+      "team": {
+       "id": "1",
+       "abbreviation": "ATL",
+       "displayName": "Atlanta Hawks"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401869389",
+  "date": "2026-04-23T23:00Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "East 1st Round - Game 3"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "1",
+      "homeAway": "home",
+      "winner": true,
+      "team": {
+       "id": "1",
+       "abbreviation": "ATL",
+       "displayName": "Atlanta Hawks"
+      }
+     },
+     {
+      "id": "18",
+      "homeAway": "away",
+      "winner": false,
+      "team": {
+       "id": "18",
+       "abbreviation": "NY",
+       "displayName": "New York Knicks"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401869391",
+  "date": "2026-04-25T22:00Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "East 1st Round - Game 4"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "1",
+      "homeAway": "home",
+      "winner": false,
+      "team": {
+       "id": "1",
+       "abbreviation": "ATL",
+       "displayName": "Atlanta Hawks"
+      }
+     },
+     {
+      "id": "18",
+      "homeAway": "away",
+      "winner": true,
+      "team": {
+       "id": "18",
+       "abbreviation": "NY",
+       "displayName": "New York Knicks"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401869392",
+  "date": "2026-04-29T00:00Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "East 1st Round - Game 5"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "18",
+      "homeAway": "home",
+      "winner": true,
+      "team": {
+       "id": "18",
+       "abbreviation": "NY",
+       "displayName": "New York Knicks"
+      }
+     },
+     {
+      "id": "1",
+      "homeAway": "away",
+      "winner": false,
+      "team": {
+       "id": "1",
+       "abbreviation": "ATL",
+       "displayName": "Atlanta Hawks"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401869393",
+  "date": "2026-04-30T23:00Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "East 1st Round - Game 6"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "1",
+      "homeAway": "home",
+      "winner": false,
+      "team": {
+       "id": "1",
+       "abbreviation": "ATL",
+       "displayName": "Atlanta Hawks"
+      }
+     },
+     {
+      "id": "18",
+      "homeAway": "away",
+      "winner": true,
+      "team": {
+       "id": "18",
+       "abbreviation": "NY",
+       "displayName": "New York Knicks"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401871159",
+  "date": "2026-05-05T00:00Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "East Semifinals - Game 1"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "18",
+      "homeAway": "home",
+      "winner": true,
+      "team": {
+       "id": "18",
+       "abbreviation": "NY",
+       "displayName": "New York Knicks"
+      }
+     },
+     {
+      "id": "20",
+      "homeAway": "away",
+      "winner": false,
+      "team": {
+       "id": "20",
+       "abbreviation": "PHI",
+       "displayName": "Philadelphia 76ers"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401871160",
+  "date": "2026-05-06T23:00Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "East Semifinals - Game 2"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "18",
+      "homeAway": "home",
+      "winner": true,
+      "team": {
+       "id": "18",
+       "abbreviation": "NY",
+       "displayName": "New York Knicks"
+      }
+     },
+     {
+      "id": "20",
+      "homeAway": "away",
+      "winner": false,
+      "team": {
+       "id": "20",
+       "abbreviation": "PHI",
+       "displayName": "Philadelphia 76ers"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401871161",
+  "date": "2026-05-08T23:00Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "East Semifinals - Game 3"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "20",
+      "homeAway": "home",
+      "winner": false,
+      "team": {
+       "id": "20",
+       "abbreviation": "PHI",
+       "displayName": "Philadelphia 76ers"
+      }
+     },
+     {
+      "id": "18",
+      "homeAway": "away",
+      "winner": true,
+      "team": {
+       "id": "18",
+       "abbreviation": "NY",
+       "displayName": "New York Knicks"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401871162",
+  "date": "2026-05-10T19:30Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "East Semifinals - Game 4"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "20",
+      "homeAway": "home",
+      "winner": false,
+      "team": {
+       "id": "20",
+       "abbreviation": "PHI",
+       "displayName": "Philadelphia 76ers"
+      }
+     },
+     {
+      "id": "18",
+      "homeAway": "away",
+      "winner": true,
+      "team": {
+       "id": "18",
+       "abbreviation": "NY",
+       "displayName": "New York Knicks"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401873341",
+  "date": "2026-05-20T00:00Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "East Finals - Game 1"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "18",
+      "homeAway": "home",
+      "winner": true,
+      "team": {
+       "id": "18",
+       "abbreviation": "NY",
+       "displayName": "New York Knicks"
+      }
+     },
+     {
+      "id": "5",
+      "homeAway": "away",
+      "winner": false,
+      "team": {
+       "id": "5",
+       "abbreviation": "CLE",
+       "displayName": "Cleveland Cavaliers"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401873342",
+  "date": "2026-05-22T00:00Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "East Finals - Game 2"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "18",
+      "homeAway": "home",
+      "winner": true,
+      "team": {
+       "id": "18",
+       "abbreviation": "NY",
+       "displayName": "New York Knicks"
+      }
+     },
+     {
+      "id": "5",
+      "homeAway": "away",
+      "winner": false,
+      "team": {
+       "id": "5",
+       "abbreviation": "CLE",
+       "displayName": "Cleveland Cavaliers"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401873343",
+  "date": "2026-05-24T00:00Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "East Finals - Game 3"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "5",
+      "homeAway": "home",
+      "winner": false,
+      "team": {
+       "id": "5",
+       "abbreviation": "CLE",
+       "displayName": "Cleveland Cavaliers"
+      }
+     },
+     {
+      "id": "18",
+      "homeAway": "away",
+      "winner": true,
+      "team": {
+       "id": "18",
+       "abbreviation": "NY",
+       "displayName": "New York Knicks"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401873344",
+  "date": "2026-05-26T00:00Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "East Finals - Game 4"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "5",
+      "homeAway": "home",
+      "winner": false,
+      "team": {
+       "id": "5",
+       "abbreviation": "CLE",
+       "displayName": "Cleveland Cavaliers"
+      }
+     },
+     {
+      "id": "18",
+      "homeAway": "away",
+      "winner": true,
+      "team": {
+       "id": "18",
+       "abbreviation": "NY",
+       "displayName": "New York Knicks"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401859963",
+  "date": "2026-06-04T00:30Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "NBA Finals - Game 1"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "24",
+      "homeAway": "home",
+      "winner": false,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     },
+     {
+      "id": "18",
+      "homeAway": "away",
+      "winner": true,
+      "team": {
+       "id": "18",
+       "abbreviation": "NY",
+       "displayName": "New York Knicks"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401859964",
+  "date": "2026-06-06T00:30Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "NBA Finals - Game 2"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "24",
+      "homeAway": "home",
+      "winner": false,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     },
+     {
+      "id": "18",
+      "homeAway": "away",
+      "winner": true,
+      "team": {
+       "id": "18",
+       "abbreviation": "NY",
+       "displayName": "New York Knicks"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401859965",
+  "date": "2026-06-09T00:30Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "NBA Finals - Game 3"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "18",
+      "homeAway": "home",
+      "winner": false,
+      "team": {
+       "id": "18",
+       "abbreviation": "NY",
+       "displayName": "New York Knicks"
+      }
+     },
+     {
+      "id": "24",
+      "homeAway": "away",
+      "winner": true,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401859966",
+  "date": "2026-06-11T00:30Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "NBA Finals - Game 4"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "18",
+      "homeAway": "home",
+      "winner": true,
+      "team": {
+       "id": "18",
+       "abbreviation": "NY",
+       "displayName": "New York Knicks"
+      }
+     },
+     {
+      "id": "24",
+      "homeAway": "away",
+      "winner": false,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "401859967",
+  "date": "2026-06-14T00:30Z",
+  "competitions": [
+   {
+    "notes": [
+     {
+      "headline": "NBA Finals - Game 5"
+     }
+    ],
+    "status": {
+     "type": {
+      "state": "post"
+     }
+    },
+    "competitors": [
+     {
+      "id": "24",
+      "homeAway": "home",
+      "winner": false,
+      "team": {
+       "id": "24",
+       "abbreviation": "SA",
+       "displayName": "San Antonio Spurs"
+      }
+     },
+     {
+      "id": "18",
+      "homeAway": "away",
+      "winner": true,
+      "team": {
+       "id": "18",
+       "abbreviation": "NY",
+       "displayName": "New York Knicks"
+      }
+     }
+    ]
+   }
+  ]
+ }
+]
