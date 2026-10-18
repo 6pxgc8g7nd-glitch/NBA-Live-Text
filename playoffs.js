@@ -90,7 +90,7 @@ const seasonLabel=y=>`${y-1}-${String(y).slice(2)} 賽季`;
 globalThis.bindTeams=root=>(root||document).querySelectorAll('[data-team]').forEach(el=>{el.style.cursor='pointer';el.onclick=ev=>{ev.stopPropagation();openTeam(el.dataset.team)}});
 
 /* ---------- 季後賽對戰樹 ---------- */
-let bracketYear=null;
+let bracketYear=null,bracketRound=0,bracketYearOfRound=null;
 async function pool(items,size,fn){let i=0;await Promise.all(Array.from({length:size},async()=>{while(i<items.length){const x=items[i++];await fn(x)}}))}
 async function loadBracket(year,onProgress){
   const key='bracket'+year;
@@ -124,16 +124,21 @@ async function renderBracket(first){
     else for(const y of [Y0,Y0-1]){const d=await loadBracket(y,prog);if(d.series.length){bracketYear=y;data=d;break}}
     if(view.type!=='bracket')return;
     if(!data){app.innerHTML=navHTML('bracket')+'<div class="empty">找不到季後賽資料</div>';bindNav();return}
-    const col=(r,conf)=>`<div class="bc"><div class="bh">${['','第一輪','準決賽','分區決賽','總冠軍賽'][r]}</div><div class="bl">${data.series.filter(s=>s.round===r&&s.conf===conf).map(serCard).join('')||'<div class="bx">尚無</div>'}</div></div>`;
+    const RN=['','第一輪','準決賽','分區決賽','總冠軍賽'];
+    const maxR=Math.max(1,...data.series.map(x=>x.round));
+    if(!bracketRound||bracketYearOfRound!==bracketYear){bracketRound=maxR;bracketYearOfRound=bracketYear}
+    const grp=(t,conf)=>{const l=data.series.filter(x=>x.round===bracketRound&&x.conf===conf);return l.length?`<div class="sec">${t}</div><div class="brl">${l.map(serCard).join('')}</div>`:''};
+    const body=bracketRound===4?grp('總冠軍賽',''):grp('西區','west')+grp('東區','east');
     const years=Array.from({length:6},(_,i)=>Y0-i);
     app.innerHTML=navHTML('bracket')+`<div class="bar"><select id="by" aria-label="賽季">${years.map(y=>`<option value="${y}" ${y===bracketYear?'selected':''}>${seasonLabel(y)}</option>`).join('')}</select>
-      <span class="foot" style="margin:0">點系列賽看最近一場,點球隊看球隊頁</span></div>
-      <div class="scroll"><div class="bw"><div class="bconf"><span>西區</span><span>總冠軍賽</span><span>東區</span></div>
-      <div class="br">${col(1,'west')}${col(2,'west')}${col(3,'west')}${col(4,'')}${col(3,'east')}${col(2,'east')}${col(1,'east')}</div></div></div>
+      <span class="foot" style="margin:0">點系列賽看最近一場</span></div>
+      <div class="tabs rounds">${[1,2,3,4].map(r=>`<button data-r="${r}" class="${r===bracketRound?'on':''}">${RN[r]}</button>`).join('')}</div>
+      ${body||'<div class="empty">這一輪還沒有對戰</div>'}
       <div class="foot">資料來源:ESPN 公開接口 · 非官方</div>`;
+    document.querySelectorAll('.rounds button').forEach(b=>b.onclick=()=>{bracketRound=+b.dataset.r;renderBracket()});
     bindNav();bindTeams(app);
     document.querySelectorAll('.ser').forEach(el=>el.onclick=()=>openGame(el.dataset.gid));
-    $('#by').onchange=e=>{bracketYear=+e.target.value;renderBracket(true)};
+    $('#by').onchange=e=>{bracketYear=+e.target.value;bracketRound=0;renderBracket(true)};
     schedule(data.done?600000:180000,()=>renderBracket());
   }catch(err){
     if(first)app.innerHTML=navHTML('bracket')+failHTML('讀取季後賽資料失敗'),bindNav();

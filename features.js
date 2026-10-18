@@ -13,13 +13,16 @@ const ICONS={
   left:'<path d="M15 5l-7 7 7 7"/>',
   right:'<path d="M9 5l7 7-7 7"/>',
   up:'<path d="M5 15l7-7 7 7"/>',
-  down:'<path d="M5 9l7 7 7-7"/>'
+  down:'<path d="M5 9l7 7 7-7"/>',
+  cal:'<rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
+  rank:'<path d="M5 20V11M12 20V4M19 20v-6"/>',
+  trophy:'<path d="M8 4h8v6a4 4 0 0 1-8 0zM8 6H5v1a3 3 0 0 0 3 3M16 6h3v1a3 3 0 0 1-3 3M12 14v4M8 20h8"/>'
 };
 const ico=n=>`<svg class="i" viewBox="0 0 24 24" aria-hidden="true">${ICONS[n]}</svg>`;
 const dotHTML='<i class="dot" aria-hidden="true"></i>';
 
 /* ---------- 導覽(賽程 / 排名) ---------- */
-const navHTML=a=>`<div class="nav"><button data-nav="list" class="${a==='list'?'on':''}">賽程</button><button data-nav="standings" class="${a==='standings'?'on':''}">排名</button><button data-nav="bracket" class="${a==='bracket'?'on':''}">季後賽</button></div>`;
+const navHTML=()=>'';
 function bindNav(){
   document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>{const n=b.dataset.nav;n==='standings'?openStandings():n==='bracket'?openBracket():openList()});
 }
@@ -137,7 +140,7 @@ async function renderStandings(first){
     const tbl=c=>{
       const es=[...c.standings.entries].sort((a,b)=>num(a,'playoffSeed')-num(b,'playoffSeed'));
       return `<div class="sec">${c.name==='Eastern Conference'?'東區':c.name==='Western Conference'?'西區':esc(c.name)}</div><div class="scroll"><table class="stand"><tr><th>#</th><th>球隊</th><th>勝</th><th>負</th><th>勝率</th><th>勝差</th><th>近十場</th><th>連勝/敗</th></tr>`+
-        es.map((e,i)=>`<tr class="${i===5||i===9?'cut':''}"><td>${i+1}</td><td class="tm" data-team="${e.team.id}"><img src="${logo(e.team)}" alt=""> ${esc(e.team.displayName)}</td><td>${esc(stat(e,'wins'))}</td><td>${esc(stat(e,'losses'))}</td><td>${esc(stat(e,'winPercent'))}</td><td>${esc(stat(e,'gamesBehind'))}</td><td>${esc(stat(e,'Last Ten Games'))}</td><td>${esc(stat(e,'streak'))}</td></tr>`).join('')+'</table></div>';
+        es.map((e,i)=>`<tr class="${i===5||i===9?'cut':''}"><td>${i+1}</td><td class="tm" data-team="${e.team.id}"><img src="${logo(e.team)}" alt=""> ${esc(e.team.shortDisplayName||e.team.displayName)}</td><td>${esc(stat(e,'wins'))}</td><td>${esc(stat(e,'losses'))}</td><td>${esc(stat(e,'winPercent'))}</td><td>${esc(stat(e,'gamesBehind'))}</td><td>${esc(stat(e,'Last Ten Games'))}</td><td>${esc(stat(e,'streak'))}</td></tr>`).join('')+'</table></div>';
     };
     app.innerHTML=navHTML('standings')+`<div class="foot" style="margin:6px 0 0;text-align:left">${esc(d.children?.[0]?.seasonDisplayName||d.seasons?.[0]?.displayName||'')} · 前 6 名直接晉級季後賽,第 7–10 名打附加賽(粗線分隔)</div>`+(d.children||[]).map(tbl).join('')+'<div class="foot">資料來源:ESPN 公開接口 · 非官方</div>';
     bindNav();bindPlayers();bindTeams(app);
