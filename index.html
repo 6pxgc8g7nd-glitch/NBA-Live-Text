@@ -15,7 +15,7 @@
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
 <title>NBA 即時轉播</title>
 <style>
-:root{--bg:#f2f2f7;--card:#fff;--line:#e5e5ea;--ink:#000;--tx:#1c1c1e;--dim:#6c6c70;--acc:#007aff;--on-acc:#fff;--live:#ff3b30;--hl:#eaf3ff;--chip:#e9e9ee;--r:14px;--sat:0px;--sab:0px;--hh:calc(48px + var(--sat));--tb:calc(52px + var(--sab));--bar:var(--bg);--sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang TC","Noto Sans TC",Roboto,sans-serif;--num:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",sans-serif}
+:root{--bg:#f2f2f7;--card:#fff;--line:#e5e5ea;--ink:#000;--tx:#1c1c1e;--dim:#6c6c70;--acc:#007aff;--on-acc:#fff;--live:#ff3b30;--hl:#eaf3ff;--chip:#e9e9ee;--r:14px;--sat:0px;--sab:0px;--hh:calc(48px + var(--sat));--tb:calc(84px + var(--sab));--bar:var(--bg);--sans:-apple-system,BlinkMacSystemFont,"SF Pro Text","PingFang TC","Noto Sans TC",Roboto,sans-serif;--num:-apple-system,BlinkMacSystemFont,"SF Pro Display","Helvetica Neue",sans-serif}
 :root[data-theme=dark]{--bg:#000;--card:#1c1c1e;--line:#38383a;--ink:#fff;--tx:#e5e5ea;--dim:#98989f;--acc:#0a84ff;--on-acc:#fff;--live:#ff453a;--hl:#10243d;--chip:#2c2c2e}
 :root{color-scheme:light}
 @supports (padding-top:env(safe-area-inset-top)){:root{--sat:env(safe-area-inset-top);--sab:env(safe-area-inset-bottom)}}
@@ -163,10 +163,12 @@ header button .i,.datebar button .i{width:1.3em;height:1.3em;vertical-align:midd
 #net{position:-webkit-sticky;position:sticky;top:var(--hh);z-index:5;background:var(--live);color:#fff;text-align:center;font-size:13px;padding:6px}
 #net[hidden]{display:none}
 /* 底部導覽列 */
-#tabbar{position:fixed;left:0;right:0;bottom:0;z-index:10;height:var(--tb);padding-bottom:var(--sab);display:flex;background:var(--bar);-webkit-backdrop-filter:saturate(180%) blur(20px);backdrop-filter:saturate(180%) blur(20px);border-top:.5px solid var(--line)}
-#tabbar button{flex:1;background:transparent;border-radius:0;color:var(--dim);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font:500 10px var(--sans);padding:0;min-height:0}
-#tabbar button .i{width:26px;height:26px}
-#tabbar button.on{color:var(--acc)}
+#tabbar{position:fixed;left:16px;right:16px;bottom:calc(12px + var(--sab));max-width:380px;margin:0 auto;z-index:10;height:62px;padding:5px;display:flex;background:var(--card);border-radius:31px;box-shadow:0 8px 24px rgba(0,0,0,.16),0 1px 3px rgba(0,0,0,.12);border:.5px solid var(--line)}
+:root[data-theme=dark] #tabbar{background:#1c1c1e;box-shadow:0 8px 24px rgba(0,0,0,.6),0 0 0 .5px #38383a}
+#tabbar button{flex:1;margin:0 2px;background:transparent;border-radius:26px;color:var(--dim);display:flex;flex-direction:column;align-items:center;justify-content:center;font:500 10px var(--sans);padding:0;min-height:0}
+#tabbar button span{margin-top:2px}
+#tabbar button .i{width:24px;height:24px}
+#tabbar button.on{color:var(--acc);background:var(--hl)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}.rps b.flash,.dot{animation:none}}
 </style>
 </head>
@@ -180,7 +182,7 @@ header button .i,.datebar button .i{width:1.3em;height:1.3em;vertical-align:midd
   <button id="next" aria-label="下一個比賽日"></button></div>
 <div id="net" role="status" hidden>目前連不上資料,顯示的可能是舊資料</div>
 <main id="app"></main>
-<footer class="disc">本站為個人學習用途的非官方專案,與 NBA 及其球隊無關;NBA 與球隊名稱、標誌為其各自所有人的商標。比分資料來自 ESPN 公開接口,可能延遲或有誤,請以官方資訊為準。<br>版本 v17</footer>
+<footer class="disc">本站為個人學習用途的非官方專案,與 NBA 及其球隊無關;NBA 與球隊名稱、標誌為其各自所有人的商標。比分資料來自 ESPN 公開接口,可能延遲或有誤,請以官方資訊為準。<br>版本 v18</footer>
 <nav id="tabbar" aria-label="主要導覽"><button data-go="list"></button><button data-go="standings"></button><button data-go="bracket"></button></nav>
 <script src="zh.js"></script>
 <script src="features.js"></script>
