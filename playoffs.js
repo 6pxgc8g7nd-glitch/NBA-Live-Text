@@ -136,7 +136,7 @@ async function renderBracket(first){
     $('#by').onchange=e=>{bracketYear=+e.target.value;renderBracket(true)};
     schedule(data.done?600000:180000,()=>renderBracket());
   }catch(err){
-    if(first)app.innerHTML=navHTML('bracket')+'<div class="empty">讀取季後賽資料失敗,請稍後重試</div>',bindNav();
+    if(first)app.innerHTML=navHTML('bracket')+failHTML('讀取季後賽資料失敗'),bindNav();
     schedule(20000,()=>renderBracket());
   }
 }
@@ -210,7 +210,7 @@ async function renderTeam(first){
     document.querySelectorAll('.tsch li').forEach(li=>li.onclick=()=>openGame(li.dataset.gid));
     bindPlayers();
   }catch(err){
-    if(first)app.innerHTML=back+'<div class="empty">讀取球隊資料失敗,請稍後重試</div>',$('#bk').onclick=()=>teamBack?teamBack():openList();
+    if(first)app.innerHTML=back+failHTML('讀取球隊資料失敗'),$('#bk').onclick=()=>teamBack?teamBack():openList();
   }
 }
 }

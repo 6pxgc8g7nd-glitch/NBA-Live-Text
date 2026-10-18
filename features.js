@@ -143,7 +143,7 @@ async function renderStandings(first){
     bindNav();bindPlayers();bindTeams(app);
     schedule(120000,()=>renderStandings());
   }catch(err){
-    if(first)app.innerHTML=navHTML('standings')+'<div class="empty">讀取排名失敗,請稍後重試</div>',bindNav();
+    if(first)app.innerHTML=navHTML('standings')+failHTML('讀取排名失敗'),bindNav();
     schedule(20000,()=>renderStandings());
   }
 }

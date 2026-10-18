@@ -152,6 +152,10 @@ body:not([data-view=list]) .dc{display:none}
 .tsch li:hover{background:var(--hl)}
 .rw{color:var(--acc)}
 .rl{color:var(--dim)}
+.disc{color:var(--dim);font-size:11px;line-height:1.6;text-align:center;max-width:640px;margin:0 auto;padding:0 16px calc(24px + env(safe-area-inset-bottom))}
+.retry{margin-top:12px;padding:6px 18px;min-height:36px}
+#net{position:sticky;top:0;z-index:5;background:var(--live);color:#fff;text-align:center;font-size:13px;padding:6px}
+#net[hidden]{display:none}
 .foot{color:var(--dim);font-size:12px;text-align:center;margin:30px 0}
 @media (prefers-reduced-motion:reduce){*{transition:none!important}.rps b.flash,.dot{animation:none}}
 </style>
@@ -164,7 +168,9 @@ body:not([data-view=list]) .dc{display:none}
   <input type="date" id="date" title="美東比賽日">
   <button id="next" aria-label="下一個比賽日"></button></span>
 </header>
+<div id="net" role="status" hidden>目前連不上資料,顯示的可能是舊資料</div>
 <main id="app"></main>
+<footer class="disc">本站為個人學習用途的非官方專案,與 NBA 及其球隊無關;NBA 與球隊名稱、標誌為其各自所有人的商標。比分資料來自 ESPN 公開接口,可能延遲或有誤,請以官方資訊為準。</footer>
 <script src="zh.js"></script>
 <script src="features.js"></script>
 <script src="playoffs.js"></script>
@@ -177,7 +183,26 @@ const ymd=d=>d.replaceAll('-','');
 const etDate=iso=>new Date(iso).toLocaleDateString('en-CA',{timeZone:'America/New_York'});
 const localStart=iso=>new Date(iso).toLocaleString('zh-TW',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:false});
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-async function get(u){const r=await fetch(u);if(!r.ok)throw new Error(r.status);return r.json()}
+let fails=0;
+async function get(u){
+  const ac=new AbortController(),to=setTimeout(()=>ac.abort(),10000);
+  try{
+    const r=await fetch(u,{signal:ac.signal});if(!r.ok)throw new Error(r.status);
+    const j=await r.json();if(!j||typeof j!=='object')throw new Error('格式不符');
+    fails=0;netBar();return j;
+  }catch(e){fails++;netBar();throw e}
+  finally{clearTimeout(to)}
+}
+const failHTML=m=>`<div class="empty">${m}<br><button class="retry">重試</button></div>`;
+function netBar(){const b=$('#net');if(b)b.hidden=navigator.onLine&&fails<2}
+function rerender(){
+  const t=view.type;
+  if(t==='list')renderList(true);else if(t==='game')renderGame(true);
+  else if(t==='standings')openStandings();else if(t==='bracket')openBracket();else if(t==='team')openTeam(view.id);
+}
+app.addEventListener('click',e=>{if(e.target.closest('.retry'))rerender()});
+addEventListener('online',()=>{fails=0;netBar();rerender()});
+addEventListener('offline',netBar);
 const logo=t=>t?.logo||t?.logos?.[0]?.href||'';
 
 function stText(e){
@@ -214,12 +239,18 @@ async function renderList(first){
     bindNav();
     schedule(g('in').length?10000:60000,()=>renderList());
   }catch(err){
-    if(first)app.innerHTML=navHTML('list')+'<div class="empty">讀取失敗,請稍後重試</div>',bindNav();
+    if(first)app.innerHTML=navHTML('list')+failHTML('讀取失敗'),bindNav();
     schedule(15000,()=>renderList());
   }
 }
 
-function schedule(ms,fn){clearTimeout(timer);timer=setTimeout(fn,ms)}
+// 失敗時拉長間隔(最多 8 倍);分頁在背景時暫停,回到前景立即更新
+let pending=null;
+function schedule(ms,fn){
+  clearTimeout(timer);pending=null;
+  timer=setTimeout(()=>{if(document.hidden)pending=fn;else fn()},ms*Math.min(2**fails,8));
+}
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&pending){const f=pending;pending=null;f()}});
 
 function openGame(id){view={type:'game',id};tab='plays';history.replaceState(null,'','#'+id);renderGame(true)}
 function openList(){view={type:'list'};history.replaceState(null,'',location.pathname);renderList(true)}
@@ -272,7 +303,7 @@ async function renderGame(first){
     const os=$('#os');if(os)os.onchange=()=>{onlyScore=os.checked;renderGame()};
     if(!s.type.completed)schedule(live?5000:30000,()=>renderGame());
   }catch(err){
-    if(first)app.innerHTML=`<button class="back" id="bk">${ico('left')} 返回賽程</button><div class="empty">讀取失敗</div>`,$('#bk').onclick=openList;
+    if(first)app.innerHTML=`<button class="back" id="bk">${ico('left')} 返回賽程</button>${failHTML('讀取失敗')}`,$('#bk').onclick=openList;
     schedule(10000,()=>renderGame());
   }
 }
